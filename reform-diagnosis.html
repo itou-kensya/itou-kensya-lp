@@ -1,0 +1,1365 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>あなたの家のリフォーム緊急度診断｜いとう建舎</title>
+<meta name="description" content="築10年超えたら、まずチェック。7つの質問に答えるだけで、あなたの家のリフォーム緊急度と補助金活用の可能性がわかります。兵庫県の伝統構法の大工・いとう建舎">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@500;700&display=swap" rel="stylesheet">
+<style>
+/* ===== RESET & BASE ===== */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 16px; scroll-behavior: smooth; }
+body {
+  font-family: 'Noto Sans JP', sans-serif;
+  color: #2a2a2a;
+  background: #faf8f5;
+  line-height: 1.8;
+  -webkit-font-smoothing: antialiased;
+}
+img { max-width: 100%; height: auto; }
+a { color: inherit; text-decoration: none; }
+
+/* ===== CSS VARIABLES ===== */
+:root {
+  --color-primary: #6b4c2a;
+  --color-primary-dark: #4a3319;
+  --color-primary-light: #8B6914;
+  --color-accent: #c8a45c;
+  --color-bg: #faf8f5;
+  --color-bg-white: #ffffff;
+  --color-text: #2a2a2a;
+  --color-text-light: #6b6b6b;
+  --color-border: #e0d8ce;
+  --color-success: #5a8f5a;
+  --color-warning: #c4842d;
+  --color-danger: #b54a32;
+  --color-subsidy: #2a7a4f;
+  --shadow-sm: 0 2px 8px rgba(107,76,42,0.08);
+  --shadow-md: 0 4px 20px rgba(107,76,42,0.12);
+  --shadow-lg: 0 8px 40px rgba(107,76,42,0.16);
+  --radius: 12px;
+  --radius-lg: 20px;
+  --max-width: 720px;
+}
+
+/* ===== UTILITY ===== */
+.container { max-width: var(--max-width); margin: 0 auto; padding: 0 20px; }
+.serif { font-family: 'Noto Serif JP', serif; }
+.hidden { display: none !important; }
+
+/* ===== HERO SECTION ===== */
+.hero {
+  background: linear-gradient(170deg, #2a2a2a 0%, #4a3319 100%);
+  color: #fff;
+  padding: 60px 20px 50px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  opacity: 0.5;
+}
+.hero-inner { position: relative; z-index: 1; max-width: var(--max-width); margin: 0 auto; }
+.hero-badge {
+  display: inline-block;
+  background: var(--color-accent);
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 4px 16px;
+  border-radius: 20px;
+  margin-bottom: 16px;
+  letter-spacing: 0.1em;
+}
+.hero-subsidy-badge {
+  display: inline-block;
+  background: var(--color-subsidy);
+  color: #fff;
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 4px 14px;
+  border-radius: 20px;
+  margin-bottom: 20px;
+  margin-left: 8px;
+  letter-spacing: 0.05em;
+}
+.hero h1 {
+  font-family: 'Noto Serif JP', serif;
+  font-size: clamp(1.6rem, 5vw, 2.2rem);
+  font-weight: 700;
+  line-height: 1.5;
+  margin-bottom: 12px;
+}
+.hero h1 span {
+  display: inline-block;
+  border-bottom: 3px solid var(--color-accent);
+  padding-bottom: 2px;
+}
+.hero-sub {
+  font-size: 0.95rem;
+  color: rgba(255,255,255,0.75);
+  margin-bottom: 28px;
+  line-height: 1.7;
+}
+.hero-features {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 32px;
+}
+.hero-feature {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.85);
+}
+.hero-feature-icon {
+  width: 20px;
+  height: 20px;
+  background: var(--color-accent);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+  flex-shrink: 0;
+}
+.btn-start {
+  display: inline-block;
+  background: var(--color-accent);
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: 700;
+  padding: 16px 48px;
+  border-radius: 50px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 16px rgba(200,164,92,0.4);
+  letter-spacing: 0.05em;
+}
+.btn-start:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(200,164,92,0.5);
+}
+
+/* ===== SUBSIDY BANNER (HERO下) ===== */
+.subsidy-banner {
+  background: linear-gradient(135deg, #e8f5ee, #d4edda);
+  border: 2px solid #b8dfc4;
+  border-radius: var(--radius);
+  padding: 20px 24px;
+  max-width: var(--max-width);
+  margin: -20px auto 0;
+  position: relative;
+  z-index: 2;
+  text-align: center;
+}
+.subsidy-banner-label {
+  display: inline-block;
+  background: var(--color-subsidy);
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 2px 12px;
+  border-radius: 12px;
+  margin-bottom: 8px;
+  letter-spacing: 0.08em;
+}
+.subsidy-banner-heading {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #1a5c34;
+  margin-bottom: 6px;
+  line-height: 1.6;
+}
+.subsidy-banner-text {
+  font-size: 0.8rem;
+  color: #3a6b4a;
+  line-height: 1.6;
+}
+.subsidy-banner-amount {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--color-subsidy);
+}
+
+/* ===== INTRO SECTION ===== */
+.intro {
+  padding: 48px 20px;
+  text-align: center;
+}
+.intro-heading {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 1.2rem;
+  color: var(--color-primary);
+  margin-bottom: 20px;
+  line-height: 1.7;
+}
+.intro-text {
+  font-size: 0.9rem;
+  color: var(--color-text-light);
+  max-width: 560px;
+  margin: 0 auto 32px;
+}
+.intro-points {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 14px;
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+.intro-point {
+  background: var(--color-bg-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 24px 14px;
+  text-align: center;
+}
+.intro-point.subsidy-point {
+  border-color: #b8dfc4;
+  background: #f5faf7;
+}
+.intro-point-icon { font-size: 1.6rem; margin-bottom: 8px; }
+.intro-point-title {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-bottom: 4px;
+}
+.intro-point.subsidy-point .intro-point-title { color: var(--color-subsidy); }
+.intro-point-desc {
+  font-size: 0.76rem;
+  color: var(--color-text-light);
+}
+
+/* ===== DIAGNOSIS SECTION ===== */
+.diagnosis { padding: 0 20px 60px; }
+.diagnosis-card {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  background: var(--color-bg-white);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  overflow: hidden;
+}
+
+/* Progress Bar */
+.progress-wrap { padding: 24px 24px 0; }
+.progress-label {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8rem;
+  color: var(--color-text-light);
+  margin-bottom: 8px;
+}
+.progress-bar {
+  width: 100%;
+  height: 6px;
+  background: #e8e2d9;
+  border-radius: 3px;
+  overflow: hidden;
+}
+.progress-fill {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, var(--color-accent), var(--color-primary-light));
+  border-radius: 3px;
+  transition: width 0.5s ease;
+}
+
+/* Question */
+.question-area {
+  padding: 32px 24px 40px;
+  min-height: 420px;
+  display: flex;
+  flex-direction: column;
+}
+.question-slide {
+  display: none;
+  animation: fadeSlideIn 0.4s ease;
+}
+.question-slide.active { display: flex; flex-direction: column; flex: 1; }
+
+@keyframes fadeSlideIn {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.question-number {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--color-accent);
+  margin-bottom: 8px;
+  letter-spacing: 0.1em;
+}
+.question-text {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 1.12rem;
+  font-weight: 700;
+  color: var(--color-text);
+  margin-bottom: 28px;
+  line-height: 1.7;
+}
+.question-note {
+  font-size: 0.78rem;
+  color: var(--color-subsidy);
+  background: #f0f8f3;
+  padding: 8px 14px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+.options { display: flex; flex-direction: column; gap: 12px; }
+.option-btn {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  background: var(--color-bg);
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 16px 20px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  font-size: 0.92rem;
+  color: var(--color-text);
+  text-align: left;
+  line-height: 1.6;
+}
+.option-btn:hover {
+  border-color: var(--color-accent);
+  background: #fdf8ee;
+  transform: translateX(4px);
+}
+.option-btn.selected {
+  border-color: var(--color-primary);
+  background: #f5efe5;
+}
+.option-marker {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 2px solid var(--color-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--color-text-light);
+  flex-shrink: 0;
+  transition: all 0.25s ease;
+}
+.option-btn:hover .option-marker {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+}
+.option-btn.selected .option-marker {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+  color: #fff;
+}
+
+/* ===== RESULT SECTION ===== */
+.result-section { padding: 0 20px 60px; }
+.result-card {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  background: var(--color-bg-white);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  overflow: hidden;
+  animation: fadeSlideIn 0.6s ease;
+}
+.result-header {
+  padding: 40px 24px 32px;
+  text-align: center;
+  color: #fff;
+}
+.result-header.level-safe { background: linear-gradient(135deg, #5a8f5a, #7ab37a); }
+.result-header.level-prepare { background: linear-gradient(135deg, #6b8fb5, #4a7a9f); }
+.result-header.level-best { background: linear-gradient(135deg, #c4842d, #d4a04a); }
+.result-header.level-urgent { background: linear-gradient(135deg, #b54a32, #c96b56); }
+
+.result-label {
+  font-size: 0.8rem;
+  letter-spacing: 0.15em;
+  margin-bottom: 8px;
+  opacity: 0.85;
+}
+.result-type-name {
+  font-family: 'Noto Serif JP', serif;
+  font-size: clamp(1.5rem, 5vw, 2rem);
+  font-weight: 700;
+  margin-bottom: 12px;
+  line-height: 1.4;
+}
+.result-score {
+  display: inline-block;
+  background: rgba(255,255,255,0.2);
+  padding: 6px 20px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.result-body { padding: 32px 24px; }
+.result-desc {
+  font-size: 0.95rem;
+  line-height: 2;
+  margin-bottom: 28px;
+  color: var(--color-text);
+}
+.result-alert {
+  background: #fdf5e9;
+  border-left: 4px solid var(--color-accent);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  padding: 20px;
+  margin-bottom: 24px;
+}
+.result-alert-title {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-bottom: 8px;
+}
+.result-alert-text {
+  font-size: 0.88rem;
+  line-height: 1.8;
+  color: var(--color-text);
+}
+
+/* Subsidy result box */
+.result-subsidy {
+  background: linear-gradient(135deg, #e8f5ee, #f0f8f3);
+  border: 2px solid #b8dfc4;
+  border-radius: var(--radius);
+  padding: 24px 20px;
+  margin-bottom: 28px;
+}
+.result-subsidy-badge {
+  display: inline-block;
+  background: var(--color-subsidy);
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 2px 12px;
+  border-radius: 12px;
+  margin-bottom: 10px;
+}
+.result-subsidy-heading {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #1a5c34;
+  margin-bottom: 10px;
+  line-height: 1.6;
+}
+.result-subsidy-text {
+  font-size: 0.85rem;
+  color: #3a6b4a;
+  line-height: 1.8;
+  margin-bottom: 12px;
+}
+.result-subsidy-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 8px;
+}
+.result-subsidy-list li {
+  font-size: 0.82rem;
+  color: #2a5a3a;
+  padding: 4px 0 4px 20px;
+  position: relative;
+  line-height: 1.6;
+}
+.result-subsidy-list li::before {
+  content: '\\2713';
+  position: absolute;
+  left: 0;
+  color: var(--color-subsidy);
+  font-weight: 700;
+}
+.result-subsidy-note {
+  font-size: 0.72rem;
+  color: #6b8f7b;
+  margin-top: 8px;
+  line-height: 1.5;
+}
+
+/* CTA in result */
+.result-cta {
+  background: linear-gradient(135deg, #faf5eb, #f5efe5);
+  border-radius: var(--radius);
+  padding: 32px 24px;
+  text-align: center;
+  margin-bottom: 28px;
+}
+.result-cta-heading {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-bottom: 12px;
+  line-height: 1.6;
+}
+.result-cta-text {
+  font-size: 0.85rem;
+  color: var(--color-text-light);
+  margin-bottom: 20px;
+  line-height: 1.7;
+}
+.btn-cta {
+  display: inline-block;
+  background: var(--color-primary);
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 700;
+  padding: 16px 40px;
+  border-radius: 50px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: var(--shadow-sm);
+  letter-spacing: 0.05em;
+}
+.btn-cta:hover {
+  background: var(--color-primary-dark);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+.btn-cta-sub {
+  display: inline-block;
+  background: transparent;
+  color: var(--color-primary);
+  font-size: 0.9rem;
+  font-weight: 700;
+  padding: 12px 32px;
+  border-radius: 50px;
+  border: 2px solid var(--color-primary);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 12px;
+}
+.btn-cta-sub:hover {
+  background: var(--color-primary);
+  color: #fff;
+}
+.btn-cta-green {
+  display: inline-block;
+  background: var(--color-subsidy);
+  color: #fff;
+  font-size: 0.9rem;
+  font-weight: 700;
+  padding: 14px 36px;
+  border-radius: 50px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(42,122,79,0.3);
+  margin-top: 12px;
+}
+.btn-cta-green:hover {
+  background: #1f6640;
+  transform: translateY(-2px);
+}
+
+/* Share */
+.result-share {
+  text-align: center;
+  padding-top: 20px;
+  border-top: 1px solid var(--color-border);
+  margin-top: 8px;
+}
+.result-share-label {
+  font-size: 0.8rem;
+  color: var(--color-text-light);
+  margin-bottom: 12px;
+}
+.share-buttons { display: flex; justify-content: center; gap: 12px; margin-bottom: 16px; }
+.share-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #fff;
+}
+.share-btn:hover { transform: scale(1.1); }
+.share-btn.x { background: #000; }
+.share-btn.line { background: #06C755; }
+.share-btn.facebook { background: #1877F2; }
+
+/* Restart */
+.btn-restart {
+  display: inline-block;
+  background: transparent;
+  color: var(--color-text-light);
+  font-size: 0.85rem;
+  padding: 8px 24px;
+  border: 1px solid var(--color-border);
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-top: 8px;
+}
+.btn-restart:hover {
+  background: var(--color-bg);
+  color: var(--color-text);
+}
+
+/* ===== TRUST SECTION ===== */
+.trust {
+  padding: 60px 20px;
+  background: var(--color-bg-white);
+}
+.trust-inner { max-width: var(--max-width); margin: 0 auto; }
+.trust-heading {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  text-align: center;
+  color: var(--color-primary);
+  margin-bottom: 32px;
+  line-height: 1.6;
+}
+.trust-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  margin-bottom: 32px;
+}
+.trust-item {
+  text-align: center;
+  padding: 24px 16px;
+  background: var(--color-bg);
+  border-radius: var(--radius);
+}
+.trust-item-icon { font-size: 2rem; margin-bottom: 8px; }
+.trust-item-title {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-bottom: 6px;
+}
+.trust-item-desc {
+  font-size: 0.8rem;
+  color: var(--color-text-light);
+  line-height: 1.7;
+}
+
+/* ===== SUBSIDY INFO SECTION ===== */
+.subsidy-info {
+  padding: 60px 20px;
+  background: linear-gradient(180deg, #f0f8f3 0%, #faf8f5 100%);
+}
+.subsidy-info-inner { max-width: var(--max-width); margin: 0 auto; }
+.subsidy-info-heading {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  text-align: center;
+  color: var(--color-subsidy);
+  margin-bottom: 12px;
+  line-height: 1.6;
+}
+.subsidy-info-sub {
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--color-text-light);
+  margin-bottom: 32px;
+}
+.subsidy-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+  margin-bottom: 24px;
+}
+.subsidy-card {
+  background: var(--color-bg-white);
+  border: 1px solid #c8e6d0;
+  border-radius: var(--radius);
+  padding: 20px 16px;
+  text-align: center;
+}
+.subsidy-card-amount {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--color-subsidy);
+  margin-bottom: 4px;
+}
+.subsidy-card-amount span {
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+.subsidy-card-label {
+  font-size: 0.78rem;
+  color: var(--color-text-light);
+  line-height: 1.5;
+}
+.subsidy-targets {
+  background: var(--color-bg-white);
+  border: 1px solid #c8e6d0;
+  border-radius: var(--radius);
+  padding: 24px;
+  margin-bottom: 20px;
+}
+.subsidy-targets-title {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--color-subsidy);
+  margin-bottom: 12px;
+}
+.subsidy-targets-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+.subsidy-target-item {
+  font-size: 0.82rem;
+  color: var(--color-text);
+  padding: 6px 0 6px 20px;
+  position: relative;
+  line-height: 1.5;
+}
+.subsidy-target-item::before {
+  content: '\\25CB';
+  position: absolute;
+  left: 0;
+  color: var(--color-subsidy);
+}
+.subsidy-note {
+  text-align: center;
+  font-size: 0.75rem;
+  color: var(--color-text-light);
+  line-height: 1.6;
+}
+
+/* ===== FOOTER ===== */
+.footer {
+  background: #2a2a2a;
+  color: rgba(255,255,255,0.7);
+  padding: 40px 20px;
+  text-align: center;
+}
+.footer-name {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 1.1rem;
+  color: #fff;
+  margin-bottom: 8px;
+  font-weight: 700;
+}
+.footer-info {
+  font-size: 0.78rem;
+  line-height: 2;
+  margin-bottom: 16px;
+}
+.footer-tel {
+  font-size: 1.3rem;
+  color: var(--color-accent);
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+.footer-tel a { color: var(--color-accent); }
+.footer-copy {
+  font-size: 0.7rem;
+  color: rgba(255,255,255,0.4);
+  margin-top: 20px;
+}
+.footer-disclaimer {
+  font-size: 0.7rem;
+  color: rgba(255,255,255,0.4);
+  margin-top: 8px;
+  line-height: 1.6;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 600px) {
+  .hero { padding: 48px 16px 40px; }
+  .subsidy-banner { margin: -16px 16px 0; }
+  .question-area { padding: 24px 16px 32px; }
+  .result-body { padding: 24px 16px; }
+  .result-cta { padding: 24px 16px; }
+  .progress-wrap { padding: 20px 16px 0; }
+  .option-btn { padding: 14px 16px; font-size: 0.88rem; }
+  .hero-features { gap: 12px; }
+  .subsidy-targets-grid { grid-template-columns: 1fr; }
+  .hero-subsidy-badge { margin-left: 0; display: block; margin-top: 4px; }
+}
+</style>
+</head>
+<body>
+
+<!-- ===== HERO ===== -->
+<section class="hero" id="hero">
+  <div class="hero-inner">
+    <span class="hero-badge">無料・1分で完了</span>
+    <span class="hero-subsidy-badge">2026年度 補助金対応</span>
+    <h1>あなたの家の<br><span>リフォーム緊急度</span>診断</h1>
+    <p class="hero-sub">築10年を超えたら、まずチェック。<br>7つの質問に答えるだけで、リフォームの緊急度と<br>補助金活用の可能性がわかります。</p>
+    <div class="hero-features">
+      <div class="hero-feature">
+        <span class="hero-feature-icon">&#10003;</span>
+        <span>たった7問</span>
+      </div>
+      <div class="hero-feature">
+        <span class="hero-feature-icon">&#10003;</span>
+        <span>約1分で完了</span>
+      </div>
+      <div class="hero-feature">
+        <span class="hero-feature-icon">&#10003;</span>
+        <span>登録不要</span>
+      </div>
+    </div>
+    <button class="btn-start" onclick="startDiagnosis()">今すぐ診断する</button>
+  </div>
+</section>
+
+<!-- ===== SUBSIDY BANNER ===== -->
+<div class="subsidy-banner">
+  <span class="subsidy-banner-label">みらいエコ住宅2026事業</span>
+  <p class="subsidy-banner-heading">省エネリフォームで最大 <span class="subsidy-banner-amount">100万円</span> の補助金</p>
+  <p class="subsidy-banner-text">窓・断熱・水回りのリフォームに国の補助金が使える可能性があります。<br>まずは診断で、あなたの家が対象になるかチェックしましょう。</p>
+</div>
+
+<!-- ===== INTRO ===== -->
+<section class="intro" id="intro">
+  <div class="container">
+    <p class="intro-heading serif">
+      「まだ住めるし、大丈夫やろ…」<br>
+      そう思っていませんか？
+    </p>
+    <p class="intro-text">
+      住まいの不具合は、気づいた時には手遅れになっていることも。<br>
+      水回りの劣化、床のきしみ、断熱の弱さ——<br>
+      小さなサインを見逃さないために、まずは簡単チェックしてみてください。
+    </p>
+    <div class="intro-points">
+      <div class="intro-point">
+        <div class="intro-point-icon">&#128674;</div>
+        <div class="intro-point-title">水回りの劣化</div>
+        <div class="intro-point-desc">カビ・水漏れ・臭いは<br>構造劣化のサイン</div>
+      </div>
+      <div class="intro-point">
+        <div class="intro-point-icon">&#127969;</div>
+        <div class="intro-point-title">床・建具の不具合</div>
+        <div class="intro-point-desc">きしみ・がたつきは<br>放置すると修繕費増大</div>
+      </div>
+      <div class="intro-point">
+        <div class="intro-point-icon">&#127777;&#65039;</div>
+        <div class="intro-point-title">断熱性能の低下</div>
+        <div class="intro-point-desc">光熱費の上昇は<br>家の性能が原因かも</div>
+      </div>
+      <div class="intro-point subsidy-point">
+        <div class="intro-point-icon">&#128176;</div>
+        <div class="intro-point-title">補助金が使えるかも</div>
+        <div class="intro-point-desc">省エネリフォームなら<br>最大100万円の補助</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== DIAGNOSIS ===== -->
+<section class="diagnosis" id="diagnosis">
+  <div class="diagnosis-card">
+    <div class="progress-wrap">
+      <div class="progress-label">
+        <span id="progressText">Question 1 / 7</span>
+        <span id="progressPercent">0%</span>
+      </div>
+      <div class="progress-bar">
+        <div class="progress-fill" id="progressFill"></div>
+      </div>
+    </div>
+    <div class="question-area" id="questionArea">
+
+      <!-- Q1 -->
+      <div class="question-slide active" data-q="1">
+        <span class="question-number">QUESTION 01</span>
+        <p class="question-text">お住まいの築年数は？</p>
+        <div class="options">
+          <button class="option-btn" data-score="1" data-subsidy="0" onclick="selectOption(this)">
+            <span class="option-marker">A</span>
+            <span>10〜15年</span>
+          </button>
+          <button class="option-btn" data-score="2" data-subsidy="1" onclick="selectOption(this)">
+            <span class="option-marker">B</span>
+            <span>16〜25年</span>
+          </button>
+          <button class="option-btn" data-score="3" data-subsidy="2" onclick="selectOption(this)">
+            <span class="option-marker">C</span>
+            <span>26〜35年</span>
+          </button>
+          <button class="option-btn" data-score="4" data-subsidy="3" onclick="selectOption(this)">
+            <span class="option-marker">D</span>
+            <span>36年以上</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Q2 -->
+      <div class="question-slide" data-q="2">
+        <span class="question-number">QUESTION 02</span>
+        <p class="question-text">キッチン・お風呂・トイレなど<br>水回りで気になることは？</p>
+        <div class="options">
+          <button class="option-btn" data-score="0" data-subsidy="0" onclick="selectOption(this)">
+            <span class="option-marker">A</span>
+            <span>特にない</span>
+          </button>
+          <button class="option-btn" data-score="1" data-subsidy="0" onclick="selectOption(this)">
+            <span class="option-marker">B</span>
+            <span>古さは感じるが使えている</span>
+          </button>
+          <button class="option-btn" data-score="3" data-subsidy="1" onclick="selectOption(this)">
+            <span class="option-marker">C</span>
+            <span>カビ・水漏れ・臭いなど不具合がある</span>
+          </button>
+          <button class="option-btn" data-score="4" data-subsidy="1" onclick="selectOption(this)">
+            <span class="option-marker">D</span>
+            <span>複数箇所で不具合が出ている</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Q3 -->
+      <div class="question-slide" data-q="3">
+        <span class="question-number">QUESTION 03</span>
+        <p class="question-text">床・壁・建具（ドアや引き戸）の<br>状態はいかがですか？</p>
+        <div class="options">
+          <button class="option-btn" data-score="0" data-subsidy="0" onclick="selectOption(this)">
+            <span class="option-marker">A</span>
+            <span>特に問題ない</span>
+          </button>
+          <button class="option-btn" data-score="1" data-subsidy="0" onclick="selectOption(this)">
+            <span class="option-marker">B</span>
+            <span>傷や汚れが目立ってきた</span>
+          </button>
+          <button class="option-btn" data-score="3" data-subsidy="0" onclick="selectOption(this)">
+            <span class="option-marker">C</span>
+            <span>床がきしむ・建具の開閉が悪い</span>
+          </button>
+          <button class="option-btn" data-score="4" data-subsidy="1" onclick="selectOption(this)">
+            <span class="option-marker">D</span>
+            <span>床がぶかぶか・建具が閉まらない</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Q4 -->
+      <div class="question-slide" data-q="4">
+        <span class="question-number">QUESTION 04</span>
+        <p class="question-text">冬の寒さ、夏の暑さは<br>どうですか？</p>
+        <div class="options">
+          <button class="option-btn" data-score="0" data-subsidy="0" onclick="selectOption(this)">
+            <span class="option-marker">A</span>
+            <span>快適に過ごせている</span>
+          </button>
+          <button class="option-btn" data-score="1" data-subsidy="1" onclick="selectOption(this)">
+            <span class="option-marker">B</span>
+            <span>やや気になるがエアコンで対応できる</span>
+          </button>
+          <button class="option-btn" data-score="2" data-subsidy="2" onclick="selectOption(this)">
+            <span class="option-marker">C</span>
+            <span>窓際・廊下がかなり寒い（暑い）</span>
+          </button>
+          <button class="option-btn" data-score="3" data-subsidy="3" onclick="selectOption(this)">
+            <span class="option-marker">D</span>
+            <span>光熱費が年々上がって困っている</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Q5（補助金設問） -->
+      <div class="question-slide" data-q="5">
+        <span class="question-number">QUESTION 05</span>
+        <p class="question-text">窓の断熱や省エネ設備に<br>ついてどう感じますか？</p>
+        <div class="question-note">&#128161; この質問は、国の補助金「みらいエコ住宅2026事業」の活用可能性を判定するための設問です。</div>
+        <div class="options">
+          <button class="option-btn" data-score="0" data-subsidy="0" onclick="selectOption(this)">
+            <span class="option-marker">A</span>
+            <span>窓や設備に不満はない</span>
+          </button>
+          <button class="option-btn" data-score="1" data-subsidy="2" onclick="selectOption(this)">
+            <span class="option-marker">B</span>
+            <span>窓の結露やすきま風が気になる</span>
+          </button>
+          <button class="option-btn" data-score="2" data-subsidy="3" onclick="selectOption(this)">
+            <span class="option-marker">C</span>
+            <span>給湯器やエアコンが古く、省エネにしたい</span>
+          </button>
+          <button class="option-btn" data-score="2" data-subsidy="4" onclick="selectOption(this)">
+            <span class="option-marker">D</span>
+            <span>窓も設備もまとめて省エネ化したい</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Q6 -->
+      <div class="question-slide" data-q="6">
+        <span class="question-number">QUESTION 06</span>
+        <p class="question-text">今の住まいで<br>「こうだったらいいのに」と思うことは？</p>
+        <div class="options">
+          <button class="option-btn" data-score="0" data-subsidy="0" onclick="selectOption(this)">
+            <span class="option-marker">A</span>
+            <span>今のままで満足</span>
+          </button>
+          <button class="option-btn" data-score="1" data-subsidy="0" onclick="selectOption(this)">
+            <span class="option-marker">B</span>
+            <span>収納がもう少しほしい</span>
+          </button>
+          <button class="option-btn" data-score="2" data-subsidy="0" onclick="selectOption(this)">
+            <span class="option-marker">C</span>
+            <span>間取りや動線を変えたい</span>
+          </button>
+          <button class="option-btn" data-score="3" data-subsidy="1" onclick="selectOption(this)">
+            <span class="option-marker">D</span>
+            <span>バリアフリーなど将来に向けた対策が必要</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Q7 -->
+      <div class="question-slide" data-q="7">
+        <span class="question-number">QUESTION 07</span>
+        <p class="question-text">リフォームについて、<br>今のお気持ちは？</p>
+        <div class="options">
+          <button class="option-btn" data-score="0" data-subsidy="0" onclick="selectOption(this)">
+            <span class="option-marker">A</span>
+            <span>まだ先の話だと思う</span>
+          </button>
+          <button class="option-btn" data-score="1" data-subsidy="0" onclick="selectOption(this)">
+            <span class="option-marker">B</span>
+            <span>情報収集を始めたところ</span>
+          </button>
+          <button class="option-btn" data-score="3" data-subsidy="0" onclick="selectOption(this)">
+            <span class="option-marker">C</span>
+            <span>そろそろ具体的に考えたい</span>
+          </button>
+          <button class="option-btn" data-score="4" data-subsidy="0" onclick="selectOption(this)">
+            <span class="option-marker">D</span>
+            <span>できるだけ早く相談したい</span>
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== RESULT (hidden initially) ===== -->
+<section class="result-section hidden" id="resultSection">
+  <div class="result-card" id="resultCard">
+    <!-- Populated by JS -->
+  </div>
+</section>
+
+<!-- ===== SUBSIDY INFO SECTION ===== -->
+<section class="subsidy-info" id="subsidyInfo">
+  <div class="subsidy-info-inner">
+    <h2 class="subsidy-info-heading">みらいエコ住宅2026事業とは？</h2>
+    <p class="subsidy-info-sub">省エネリフォームに使える、国の補助金制度です</p>
+    <div class="subsidy-cards">
+      <div class="subsidy-card">
+        <div class="subsidy-card-amount">最大100<span>万円</span></div>
+        <div class="subsidy-card-label">1戸あたりの<br>補助上限額</div>
+      </div>
+      <div class="subsidy-card">
+        <div class="subsidy-card-amount">窓・断熱・設備</div>
+        <div class="subsidy-card-label">対象となる<br>リフォーム工事</div>
+      </div>
+      <div class="subsidy-card">
+        <div class="subsidy-card-amount">2026<span>年12月迄</span></div>
+        <div class="subsidy-card-label">申請期限<br>（予算上限あり）</div>
+      </div>
+    </div>
+    <div class="subsidy-targets">
+      <div class="subsidy-targets-title">対象となる工事の例</div>
+      <div class="subsidy-targets-grid">
+        <div class="subsidy-target-item">内窓の設置・交換</div>
+        <div class="subsidy-target-item">外壁・天井の断熱</div>
+        <div class="subsidy-target-item">節水型トイレの設置</div>
+        <div class="subsidy-target-item">高効率給湯器の導入</div>
+        <div class="subsidy-target-item">浴室の断熱改修</div>
+        <div class="subsidy-target-item">バリアフリー改修</div>
+      </div>
+    </div>
+    <p class="subsidy-note">※ 補助金の申請はいとう建舎が代行します。予算上限に達し次第終了となりますのでお早めにご相談ください。<br>※ 他制度（先進的窓リノベ2026・給湯省エネ2026）との併用も可能です。</p>
+  </div>
+</section>
+
+<!-- ===== TRUST SECTION ===== -->
+<section class="trust" id="trust">
+  <div class="trust-inner">
+    <h2 class="trust-heading">いとう建舎が選ばれる理由</h2>
+    <div class="trust-grid">
+      <div class="trust-item">
+        <div class="trust-item-icon">&#128736;</div>
+        <div class="trust-item-title">大工が最初から最後まで</div>
+        <div class="trust-item-desc">設計から施工・お引き渡しまで、大工が一貫して対応。伝わりにくいニュアンスも直接やり取りできます。</div>
+      </div>
+      <div class="trust-item">
+        <div class="trust-item-icon">&#127807;</div>
+        <div class="trust-item-title">自然素材へのこだわり</div>
+        <div class="trust-item-desc">漆喰・珪藻土・無垢の木など、体にやさしい自然素材を活かした、健康な住まいづくり。</div>
+      </div>
+      <div class="trust-item">
+        <div class="trust-item-icon">&#127959;</div>
+        <div class="trust-item-title">伝統構法の技術</div>
+        <div class="trust-item-desc">日本古来の手刻み加工を受け継ぐ、確かな技術。木の特性を知り尽くした大工だからこその仕事。</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-name">いとう建舎</div>
+    <div class="footer-info">
+      〒679-3423 兵庫県朝来市多々良木249<br>
+      建設業許可：兵庫県知事許可(般-3) 第651684号
+    </div>
+    <div class="footer-tel">
+      <a href="tel:079-666-8380">079-666-8380</a>
+    </div>
+    <div class="footer-disclaimer">
+      ※ この診断は住まいの状態を簡易的にチェックするものであり、建物の安全性を保証するものではありません。<br>
+      ※ 補助金の適用可否は現地調査・申請内容により異なります。詳細はお問い合わせください。
+    </div>
+    <div class="footer-copy">&copy; 2024 いとう建舎 All rights reserved.</div>
+  </div>
+</footer>
+
+<script>
+// ===== STATE =====
+let currentQ = 0;
+const totalQ = 7;
+let totalScore = 0;
+let subsidyScore = 0;
+let answers = [];
+
+// ===== RESULTS DATA =====
+const results = [
+  {
+    id: 'safe',
+    level: 'level-safe',
+    name: 'まだまだ安心タイプ',
+    desc: '今のところ、大きな問題はなさそうです。築年数を考えると、まだ余裕がある状態といえます。ただし、築10年を超えると水回りや外壁は少しずつ劣化が始まります。今のうちに「将来どうしたいか」をイメージしておくと、いざという時に慌てません。',
+    alert: '「まだ大丈夫」と思っているうちに劣化が進み、気づいた時には大がかりな工事に…というケースは少なくありません。定期的なチェックが大切です。',
+    ctaHeading: 'まずは事例を見てみませんか？',
+    ctaText: 'いとう建舎が手がけたリフォーム事例をご紹介しています。「うちもこうなったらいいな」のヒントが見つかるかもしれません。',
+    ctaBtn: 'リフォーム事例を見る',
+    ctaUrl: 'https://itou-kensya.com/',
+    ctaSub: false
+  },
+  {
+    id: 'prepare',
+    level: 'level-prepare',
+    name: 'そろそろ準備タイプ',
+    desc: '小さな不具合や古さを感じ始めている段階です。実はここが一番「計画的にリフォームできるタイミング」。症状が軽いうちなら工期も費用もコンパクトに済む可能性が高いです。まずは全体像を把握することから始めてみてください。',
+    alert: '水回りの劣化や断熱性能の低下は、放っておくと構造部分にまで影響することがあります。早めの手当てが、家の寿命を延ばします。',
+    ctaHeading: '今のうちに、プロの目で確認しませんか？',
+    ctaText: '事例を見ながらリフォームの計画を考えてみてください。無料相談もお気軽にどうぞ。',
+    ctaBtn: '事例を見て相談する',
+    ctaUrl: 'https://itou-kensya.com/',
+    ctaSub: true
+  },
+  {
+    id: 'best',
+    level: 'level-best',
+    name: '今がベストタイミングタイプ',
+    desc: '複数の箇所で不具合や不満が出てきています。まさに今がリフォームのベストタイミングです。水回り・内装・断熱をまとめて対応すれば、一つずつ直すより効率的で、トータルの費用も抑えられます。',
+    alert: '水回り・床・建具と複数の悩みが重なると、「どこから手をつけていいかわからない」状態になりがちです。プロに全体を見てもらうことが、一番の近道です。',
+    ctaHeading: 'まずはプロに全体を診てもらいませんか？',
+    ctaText: 'いとう建舎では、無料で現地調査を行っています。大工が直接お伺いして、優先順位と概算をお伝えします。',
+    ctaBtn: '無料現地調査を申し込む',
+    ctaUrl: 'https://itou-kensya.com/',
+    ctaSub: true
+  },
+  {
+    id: 'urgent',
+    level: 'level-urgent',
+    name: 'すぐに相談タイプ',
+    desc: 'お家のSOSサインがかなり出ている状態です。特に水回りや構造に関わる不具合は、放置すると修繕費が倍以上になることもあります。できるだけ早くプロに相談されることをおすすめします。',
+    alert: '水漏れや床の劣化は、見えない部分（土台・柱）にまで傷みが広がっている可能性があります。「まだ住めるから」と先延ばしにするほど、コストは膨らむ傾向があります。',
+    ctaHeading: 'まずはお電話ください',
+    ctaText: '大工の伊藤が直接お話を伺います。現地調査も無料で対応しています。まずは状況をお聞かせください。',
+    ctaBtn: '今すぐ電話で相談する',
+    ctaUrl: 'tel:079-666-8380',
+    ctaSub: true
+  }
+];
+
+// Subsidy messages by level
+const subsidyMessages = {
+  high: {
+    heading: '補助金が活用できる可能性が高いです',
+    text: 'あなたの回答内容から、「みらいエコ住宅2026事業」の補助金対象となるリフォームが複数ありそうです。窓の断熱改修や省エネ設備の導入など、まとめて申請すれば大きな補助が見込めます。',
+    items: ['内窓設置・窓交換による断熱改修', '高効率給湯器・節水トイレの導入', 'バリアフリー改修との併用も可能', '申請手続きはいとう建舎が代行']
+  },
+  mid: {
+    heading: '補助金の対象になる可能性があります',
+    text: '断熱や省エネに関するリフォームをお考えなら、「みらいエコ住宅2026事業」の補助金が使える場合があります。対象かどうかは現地の状態を見て判断しますので、お気軽にご相談ください。',
+    items: ['窓の断熱改修が対象になる可能性', '省エネ設備の導入も補助対象', '予算上限ありのため早めの相談が安心', '申請手続きはいとう建舎が代行']
+  },
+  low: {
+    heading: '補助金の情報もお伝えできます',
+    text: '今すぐではなくても、将来リフォームをお考えの際には「みらいエコ住宅2026事業」などの補助金制度が活用できるかもしれません。いとう建舎では補助金の活用提案も含めてご相談を承っています。',
+    items: ['省エネリフォームに最大100万円の補助', '窓・断熱・設備が対象', '2026年度の予算枠あり', '詳しくはお問い合わせください']
+  }
+};
+
+// ===== FUNCTIONS =====
+function startDiagnosis() {
+  document.getElementById('diagnosis').scrollIntoView({ behavior: 'smooth' });
+}
+
+function selectOption(btn) {
+  if (btn.classList.contains('selected')) return;
+
+  const slide = btn.closest('.question-slide');
+  const options = slide.querySelectorAll('.option-btn');
+  options.forEach(function(o) { o.classList.remove('selected'); o.style.pointerEvents = 'none'; });
+  btn.classList.add('selected');
+
+  totalScore += parseInt(btn.dataset.score);
+  subsidyScore += parseInt(btn.dataset.subsidy || 0);
+  currentQ++;
+
+  setTimeout(function() {
+    if (currentQ < totalQ) {
+      showQuestion(currentQ);
+    } else {
+      showResult();
+    }
+  }, 400);
+}
+
+function showQuestion(index) {
+  var slides = document.querySelectorAll('.question-slide');
+  slides.forEach(function(s) { s.classList.remove('active'); });
+  slides[index].classList.add('active');
+  slides[index].querySelectorAll('.option-btn').forEach(function(o) { o.style.pointerEvents = 'auto'; });
+
+  var pct = Math.round((index / totalQ) * 100);
+  document.getElementById('progressFill').style.width = pct + '%';
+  document.getElementById('progressText').textContent = 'Question ' + (index + 1) + ' / ' + totalQ;
+  document.getElementById('progressPercent').textContent = pct + '%';
+}
+
+function showResult() {
+  document.getElementById('progressFill').style.width = '100%';
+  document.getElementById('progressPercent').textContent = '100%';
+  document.getElementById('progressText').textContent = '診断完了！';
+
+  // Determine result type (max score now 25)
+  var r;
+  if (totalScore <= 5) r = results[0];
+  else if (totalScore <= 12) r = results[1];
+  else if (totalScore <= 19) r = results[2];
+  else r = results[3];
+
+  // Determine subsidy level (max subsidy score ~15)
+  var sub;
+  if (subsidyScore >= 8) sub = subsidyMessages.high;
+  else if (subsidyScore >= 4) sub = subsidyMessages.mid;
+  else sub = subsidyMessages.low;
+
+  var shareText = encodeURIComponent('【リフォーム緊急度診断】結果は「' + r.name + '」でした！あなたも診断してみてください');
+  var shareUrl = encodeURIComponent(window.location.href);
+
+  var subsidyItemsHtml = '';
+  sub.items.forEach(function(item) {
+    subsidyItemsHtml += '<li>' + item + '</li>';
+  });
+
+  var html = '' +
+    '<div class="result-header ' + r.level + '">' +
+      '<div class="result-label">あなたの診断結果</div>' +
+      '<div class="result-type-name">' + r.name + '</div>' +
+      '<div class="result-score">スコア：' + totalScore + ' / 25点</div>' +
+    '</div>' +
+    '<div class="result-body">' +
+      '<p class="result-desc">' + r.desc + '</p>' +
+      '<div class="result-alert">' +
+        '<div class="result-alert-title">&#9888;&#65039; 知っておいてほしいこと</div>' +
+        '<p class="result-alert-text">' + r.alert + '</p>' +
+      '</div>' +
+
+      '<div class="result-subsidy">' +
+        '<span class="result-subsidy-badge">みらいエコ住宅2026事業</span>' +
+        '<p class="result-subsidy-heading">' + sub.heading + '</p>' +
+        '<p class="result-subsidy-text">' + sub.text + '</p>' +
+        '<ul class="result-subsidy-list">' + subsidyItemsHtml + '</ul>' +
+        '<p class="result-subsidy-note">※ 補助金の適用可否は現地調査・申請内容により異なります。予算上限に達し次第終了。</p>' +
+      '</div>' +
+
+      '<div class="result-cta">' +
+        '<p class="result-cta-heading">' + r.ctaHeading + '</p>' +
+        '<p class="result-cta-text">' + r.ctaText + '</p>' +
+        '<a href="' + r.ctaUrl + '" class="btn-cta" target="_blank" rel="noopener">' + r.ctaBtn + '</a>' +
+        (r.ctaSub ? '<br><a href="https://itou-kensya.com/" class="btn-cta-sub" target="_blank" rel="noopener">リフォーム事例を見る</a>' : '') +
+        '<br><a href="#subsidyInfo" class="btn-cta-green">補助金について詳しく見る</a>' +
+      '</div>' +
+
+      '<div class="result-share">' +
+        '<p class="result-share-label">診断結果をシェアする</p>' +
+        '<div class="share-buttons">' +
+          '<button class="share-btn x" onclick="window.open(\'https://twitter.com/intent/tweet?text=' + shareText + '&url=' + shareUrl + '\',\'_blank\')" aria-label="Xでシェア">X</button>' +
+          '<button class="share-btn line" onclick="window.open(\'https://social-plugins.line.me/lineit/share?url=' + shareUrl + '&text=' + shareText + '\',\'_blank\')" aria-label="LINEでシェア">L</button>' +
+          '<button class="share-btn facebook" onclick="window.open(\'https://www.facebook.com/sharer/sharer.php?u=' + shareUrl + '\',\'_blank\')" aria-label="Facebookでシェア">f</button>' +
+        '</div>' +
+        '<button class="btn-restart" onclick="restartDiagnosis()">もう一度診断する</button>' +
+      '</div>' +
+    '</div>';
+
+  document.getElementById('resultCard').innerHTML = html;
+
+  setTimeout(function() {
+    document.querySelector('.diagnosis-card').classList.add('hidden');
+    document.getElementById('resultSection').classList.remove('hidden');
+    document.getElementById('resultSection').scrollIntoView({ behavior: 'smooth' });
+  }, 300);
+}
+
+function restartDiagnosis() {
+  currentQ = 0;
+  totalScore = 0;
+  subsidyScore = 0;
+  answers = [];
+
+  document.querySelectorAll('.question-slide').forEach(function(s, i) {
+    s.classList.toggle('active', i === 0);
+    s.querySelectorAll('.option-btn').forEach(function(o) {
+      o.classList.remove('selected');
+      o.style.pointerEvents = 'auto';
+    });
+  });
+
+  document.getElementById('progressFill').style.width = '0%';
+  document.getElementById('progressText').textContent = 'Question 1 / 7';
+  document.getElementById('progressPercent').textContent = '0%';
+
+  document.getElementById('resultSection').classList.add('hidden');
+  document.querySelector('.diagnosis-card').classList.remove('hidden');
+  document.getElementById('diagnosis').scrollIntoView({ behavior: 'smooth' });
+}
+</script>
+</body>
+</html>

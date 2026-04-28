@@ -1,0 +1,21 @@
+# OS / editor
+.DS_Store
+Thumbs.db
+desktop.ini
+*.swp
+*~
+
+# Office temp
+~$*
+
+# IDE
+.vscode/
+.idea/
+
+# logs
+*.log
+
+# secrets (should never be committed)
+.env
+.env.*
+!.env.example

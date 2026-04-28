@@ -1,0 +1,2274 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>いとう建舎｜但馬の木の家リフォーム・古民家再生｜朝来市・養父市</title>
+<meta name="description" content="「高そう」「どこに頼めばいいかわからない」その悩み、LINEで写真を送るだけで解決できます。但馬の職人が翌日に概算回答。部分リフォームOK・見積無料。朝来市・養父市のリフォーム・古民家再生ならいとう建舎。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;500;600&family=Noto+Sans+JP:wght@300;400;500&display=swap" rel="stylesheet">
+<script>
+/* デバイス判定（フラッシュ防止） */
+(function(){
+  var saved = localStorage.getItem('itou-view');
+  var ua = navigator.userAgent;
+  var isMob = saved ? saved==='mobile' : (/Android|iPhone|iPod|webOS|BlackBerry|IEMobile|Opera Mini/i.test(ua)||window.innerWidth<=768);
+  if(isMob) document.documentElement.classList.add('mobile-view');
+})();
+</script>
+<style>
+
+/* ══════════════════════════════════════
+   DESIGN THEME: Organic Minimalism × Noise Texture
+   ペルソナ: 38歳女性・子どもの健康を守りたい
+   Framework: 新PASONA
+══════════════════════════════════════ */
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --cream:   #F5F0E8;
+  --cream2:  #EDE8DF;
+  --cream3:  #E5DED3;
+  --charcoal:#2C2A27;
+  --mid:     #7A6E65;
+  --light:   #A89E95;
+  --border:  #D8D2C8;
+  --brown:   #7C5240;
+  --brownL:  #C4956A;
+  --green:   #3D5A40;
+  --greenL:  #5C8160;
+  --dark:    #1E1A16;
+  --dark2:   #2A2420;
+  --white:   #FDFCF8;
+  --line:    #06C755;
+  --line2:   #04a845;
+  --serif:   'Noto Serif JP', Georgia, serif;
+  --sans:    'Noto Sans JP', sans-serif;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--sans);
+  font-size: 17px;
+  line-height: 1.8;
+  color: var(--charcoal);
+  background: var(--cream);
+  overflow-x: hidden;
+}
+
+img { display: block; max-width: 100%; height: auto; }
+a { text-decoration: none; color: inherit; }
+
+/* ── ノイズテクスチャ（疑似） ── */
+.noise::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ══════════════════════════════════════
+   REVEAL ANIMATION
+══════════════════════════════════════ */
+.js-reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity .85s cubic-bezier(.16,1,.3,1), transform .85s cubic-bezier(.16,1,.3,1);
+}
+.js-reveal.d1 { transition-delay: .1s; }
+.js-reveal.d2 { transition-delay: .2s; }
+.js-reveal.d3 { transition-delay: .3s; }
+.js-reveal.d4 { transition-delay: .4s; }
+.js-reveal.visible { opacity: 1; transform: none; }
+
+/* ══════════════════════════════════════
+   NOTICE BAR（Narrowing の予告）
+══════════════════════════════════════ */
+#notice {
+  background: var(--brown);
+  color: rgba(255,255,255,.88);
+  font-size: 12px;
+  letter-spacing: .07em;
+  text-align: center;
+  padding: 10px 20px;
+  position: sticky;
+  top: 0;
+  z-index: 200;
+}
+#notice strong { color: #fff; }
+#notice a {
+  color: rgba(255,255,255,.65);
+  border-bottom: 1px solid rgba(255,255,255,.3);
+  margin-left: 14px;
+  font-size: 11px;
+  transition: color .2s;
+}
+#notice a:hover { color: #fff; }
+
+/* ══════════════════════════════════════
+   NAV
+══════════════════════════════════════ */
+nav {
+  position: sticky;
+  top: 37px;
+  z-index: 199;
+  background: #1A1614;
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255,255,255,.06);
+  padding: 0 48px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.nav-logo {
+  font-family: var(--serif);
+  font-size: 20px;
+  font-weight: 400;
+  color: rgba(255,255,255,.92);
+  letter-spacing: .12em;
+}
+.nav-menu {
+  display: flex;
+  gap: 32px;
+  list-style: none;
+  font-size: 13px;
+  color: rgba(255,255,255,.45);
+  font-weight: 300;
+}
+.nav-menu a:hover { color: rgba(255,255,255,.85); }
+.nav-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  color: rgba(255,255,255,.75);
+  padding: 9px 20px;
+  font-size: 13px;
+  font-weight: 400;
+  border-radius: 0;
+  border: 1px solid rgba(255,255,255,.22);
+  letter-spacing: .06em;
+  transition: background .2s, border-color .2s;
+}
+.nav-cta-btn:hover { background: rgba(255,255,255,.08); border-color: rgba(255,255,255,.4); }
+.nav-cta-btn svg { width: 15px; height: 15px; fill: currentColor; flex-shrink: 0; }
+
+/* ══════════════════════════════════════
+   HERO（P: Problem + A: Affinity）
+══════════════════════════════════════ */
+#hero {
+  position: relative;
+  min-height: 92vh;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+  background: var(--dark);
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+.hero-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(.52);
+}
+.hero-bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(108deg, rgba(16,12,9,.92) 0%, rgba(16,12,9,.68) 44%, rgba(16,12,9,.1) 100%);
+}
+
+/* ── セクション背景画像（共通） ── */
+.sec-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+.sec-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+/* ライトセクション用オーバーレイ（cream系） */
+.sec-bg-light::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(237,232,223,.78);
+}
+/* ダークセクション用オーバーレイ */
+.sec-bg-dark::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(16,12,9,.72);
+}
+
+.hero-text {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  max-width: 680px;
+  padding: 180px 80px 72px;
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  border: 1px solid rgba(255,255,255,.22);
+  color: rgba(255,255,255,.55);
+  font-size: 10px;
+  letter-spacing: .2em;
+  font-weight: 400;
+  padding: 6px 14px;
+  border-radius: 0;
+  margin-bottom: 28px;
+  text-transform: uppercase;
+  width: fit-content;
+}
+
+.hero-title {
+  font-family: var(--serif);
+  font-size: clamp(30px, 3.8vw, 54px);
+  font-weight: 400;
+  color: var(--white);
+  line-height: 1.55;
+  letter-spacing: .03em;
+  margin-bottom: 20px;
+}
+.hero-title .underline {
+  display: inline;
+  background: linear-gradient(to bottom, transparent 60%, rgba(255,255,255,.18) 60%);
+}
+
+.hero-sub {
+  font-size: 15px;
+  color: rgba(255,255,255,.65);
+  line-height: 2;
+  margin-bottom: 40px;
+  max-width: 460px;
+  font-weight: 300;
+}
+
+.btn-line {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--line);
+  color: var(--white);
+  padding: 16px 36px;
+  font-size: 15px;
+  font-weight: 500;
+  border-radius: 0;
+  letter-spacing: .04em;
+  transition: background .2s, transform .15s;
+  align-self: flex-start;
+}
+.btn-line:hover { background: var(--line2); transform: translateY(-1px); }
+.btn-line svg { width: 19px; height: 19px; fill: currentColor; }
+
+.hero-notes {
+  margin-top: 16px;
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.hero-note {
+  font-size: 12px;
+  color: rgba(255,255,255,.42);
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-weight: 300;
+}
+.hero-note::before {
+  content: '✓';
+  color: rgba(255,255,255,.35);
+  font-size: 11px;
+}
+
+.hero-tel {
+  margin-top: 20px;
+  font-size: 13px;
+  color: rgba(255,255,255,.38);
+  font-weight: 300;
+}
+.hero-tel a {
+  color: rgba(255,255,255,.78);
+  font-size: 17px;
+  font-family: var(--serif);
+  font-weight: 400;
+  margin-left: 6px;
+}
+
+/* 旧 hero-image (後方互換) */
+.hero-image { display: none; }
+
+.hero-stats {
+  display: flex;
+  margin-top: 44px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(255,255,255,.1);
+  gap: 0;
+}
+.stat-item {
+  text-align: center;
+  flex: 1;
+  padding: 0 20px;
+  border-right: 1px solid rgba(255,255,255,.1);
+}
+.stat-item:first-child { padding-left: 0; }
+.stat-item:last-child { border: none; }
+.stat-num {
+  display: block;
+  font-family: var(--serif);
+  font-size: 24px;
+  font-weight: 400;
+  color: var(--white);
+  line-height: 1;
+}
+.stat-label {
+  font-size: 10px;
+  color: rgba(255,255,255,.4);
+  margin-top: 5px;
+  letter-spacing: .06em;
+  line-height: 1.5;
+}
+
+/* ══════════════════════════════════════
+   PAIN（Affinity: 共感セクション）
+══════════════════════════════════════ */
+#pain {
+  background: var(--cream2);
+  padding: 80px 80px;
+  position: relative;
+  overflow: hidden;
+}
+.pain-inner { max-width: 1020px; margin: 0 auto; position: relative; z-index: 1; }
+
+.section-eyebrow {
+  display: block;
+  font-size: 11px;
+  letter-spacing: .22em;
+  color: var(--light);
+  text-transform: uppercase;
+  font-weight: 400;
+  margin-bottom: 16px;
+}
+.section-title {
+  font-family: var(--serif);
+  font-size: clamp(26px, 3.4vw, 48px);
+  font-weight: 400;
+  color: var(--charcoal);
+  line-height: 1.5;
+  letter-spacing: .02em;
+  margin-bottom: 16px;
+}
+.section-body {
+  font-size: 15px;
+  color: var(--mid);
+  line-height: 2;
+  font-weight: 300;
+  max-width: 560px;
+  margin-bottom: 48px;
+}
+
+.pain-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+.pain-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 0;
+  padding: 36px 32px;
+  position: relative;
+}
+.pain-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--brownL), var(--brown));
+}
+.pain-icon {
+  font-size: 28px;
+  margin-bottom: 16px;
+  display: block;
+}
+.pain-card h3 {
+  font-family: var(--serif);
+  font-size: 17px;
+  font-weight: 500;
+  color: var(--charcoal);
+  margin-bottom: 10px;
+  line-height: 1.6;
+}
+.pain-card p {
+  font-size: 14px;
+  color: var(--mid);
+  line-height: 1.9;
+  font-weight: 300;
+}
+
+/* ══════════════════════════════════════
+   SOLUTION（S: 解決策）
+══════════════════════════════════════ */
+#solution {
+  background: var(--green);
+  padding: 80px 80px;
+  position: relative;
+  overflow: hidden;
+}
+#solution::after {
+  content: '';
+  position: absolute;
+  top: -80px; right: -80px;
+  width: 400px; height: 400px;
+  border-radius: 50%;
+  background: rgba(255,255,255,.03);
+  pointer-events: none;
+}
+.solution-inner {
+  max-width: 1020px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+.sol-badge {
+  display: inline-block;
+  border: 1px solid rgba(255,255,255,.25);
+  color: rgba(255,255,255,.6);
+  font-size: 10px;
+  letter-spacing: .2em;
+  padding: 5px 14px;
+  margin-bottom: 24px;
+  text-transform: uppercase;
+  font-weight: 300;
+  border-radius: 0;
+}
+.sol-title {
+  font-family: var(--serif);
+  font-size: clamp(26px, 3.4vw, 44px);
+  font-weight: 400;
+  color: var(--white);
+  line-height: 1.55;
+  letter-spacing: .02em;
+  margin-bottom: 20px;
+}
+.sol-body {
+  font-size: 15px;
+  color: rgba(255,255,255,.65);
+  line-height: 2;
+  font-weight: 300;
+  margin-bottom: 36px;
+}
+.btn-line-white {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--line);
+  color: var(--white);
+  padding: 16px 36px;
+  font-size: 15px;
+  font-weight: 500;
+  border-radius: 0;
+  letter-spacing: .04em;
+  transition: background .2s, transform .15s;
+}
+.btn-line-white:hover { background: var(--line2); transform: translateY(-1px); }
+.btn-line-white svg { width: 19px; height: 19px; fill: currentColor; }
+
+.sol-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+.sol-step {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  padding: 24px 0;
+  border-bottom: 1px solid rgba(255,255,255,.08);
+}
+.sol-step:last-child { border: none; }
+.sol-step-num {
+  font-family: var(--serif);
+  font-size: 32px;
+  font-weight: 300;
+  color: rgba(255,255,255,.2);
+  line-height: 1;
+  flex-shrink: 0;
+  width: 44px;
+  padding-top: 4px;
+}
+.sol-step-content h4 {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--white);
+  margin-bottom: 4px;
+}
+.sol-step-content p {
+  font-size: 13px;
+  color: rgba(255,255,255,.5);
+  line-height: 1.8;
+  font-weight: 300;
+}
+
+/* ══════════════════════════════════════
+   SECTION BASE
+══════════════════════════════════════ */
+.section { padding: 80px 80px; }
+.inner { max-width: 1020px; margin: 0 auto; }
+
+/* ══════════════════════════════════════
+   WORKS（O: 施工事例）
+══════════════════════════════════════ */
+#works { background: var(--cream); }
+
+.works-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 40px;
+}
+.works-link {
+  font-size: 13px;
+  color: var(--mid);
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 3px;
+  font-weight: 300;
+  transition: color .2s, border-color .2s;
+}
+.works-link:hover { color: var(--charcoal); border-color: var(--charcoal); }
+
+.works-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+.work-card { overflow: hidden; }
+.work-thumb {
+  overflow: hidden;
+  margin-bottom: 16px;
+  border-radius: 0;
+}
+.work-thumb img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  transition: transform .5s ease;
+}
+.work-card:hover .work-thumb img { transform: scale(1.04); }
+.work-tag {
+  display: block;
+  font-size: 10px;
+  letter-spacing: .18em;
+  color: var(--light);
+  text-transform: uppercase;
+  margin-bottom: 7px;
+}
+.work-title {
+  font-family: var(--serif);
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--charcoal);
+  margin-bottom: 7px;
+  line-height: 1.6;
+}
+.work-desc {
+  font-size: 13px;
+  color: var(--mid);
+  line-height: 1.9;
+  font-weight: 300;
+}
+
+/* ══════════════════════════════════════
+   ACCORDION EXPAND
+══════════════════════════════════════ */
+.expand-content {
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  transition: max-height .65s cubic-bezier(.16,1,.3,1), opacity .4s ease;
+}
+.expand-content.open { max-height: 5000px; opacity: 1; }
+.expand-wrap { text-align: center; margin-top: 36px; }
+.expand-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background: var(--charcoal);
+  border: none;
+  color: rgba(255,255,255,.82);
+  font-size: 13px;
+  font-weight: 400;
+  padding: 15px 40px;
+  cursor: pointer;
+  letter-spacing: .1em;
+  transition: background .2s, transform .15s;
+  font-family: var(--sans);
+  border-radius: 0;
+}
+.expand-btn:hover { background: var(--brown); color: var(--white); transform: translateY(-1px); }
+.expand-btn.active { background: var(--brown); color: var(--white); }
+.expand-btn.active .eicon { transform: rotate(180deg); }
+.expand-btn .eicon { display: inline-block; transition: transform .3s; font-style: normal; font-size: 10px; }
+.expand-btn-dark {
+  background: rgba(255,255,255,.1);
+  border: 1px solid rgba(255,255,255,.18);
+  color: rgba(255,255,255,.75);
+}
+.expand-btn-dark:hover { background: rgba(255,255,255,.18); border-color: rgba(255,255,255,.35); color: var(--white); }
+.expand-btn-dark.active { background: rgba(255,255,255,.15); }
+
+/* ─── SOLUTION INLINE（Painセクション内） ─── */
+.sol-inline { margin-top: 48px; background: var(--green); padding: 40px 48px; }
+.sol-inline-inner {
+  display: flex; align-items: center; gap: 48px;
+  justify-content: space-between; max-width: 860px; margin: 0 auto;
+}
+.sol-inline-lead {
+  font-family: var(--serif); font-size: 22px; font-weight: 500;
+  color: var(--white); margin-bottom: 8px; line-height: 1.5;
+}
+.sol-inline-body { font-size: 14px; color: rgba(255,255,255,.6); line-height: 1.9; font-weight: 300; }
+@media (max-width: 960px) {
+  .sol-inline { padding: 32px 24px; }
+  .sol-inline-inner { flex-direction: column; gap: 24px; }
+  .sol-inline-inner .btn-line { align-self: stretch; justify-content: center; }
+}
+.mobile-view .sol-inline { padding: 32px 24px; }
+.mobile-view .sol-inline-inner { flex-direction: column; gap: 24px; }
+.mobile-view .sol-inline-inner .btn-line { align-self: stretch; justify-content: center; }
+
+/* ─── BEFORE / AFTER（Worksセクション内） ─── */
+.ba-section-head { margin-top: 64px; padding-top: 56px; border-top: 1px solid var(--border); }
+#beforeafter { background: var(--cream); }
+#beforeafter .container { max-width: 960px; }
+.ba-list { display: flex; flex-direction: column; gap: 64px; margin-top: 56px; }
+.ba-label-head {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .12em;
+  color: var(--brownD);
+  text-transform: uppercase;
+  margin-bottom: 14px;
+}
+.ba-pair {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 16px;
+  align-items: center;
+}
+.ba-photo { position: relative; overflow: hidden; }
+.ba-photo img {
+  width: 100%;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+  display: block;
+}
+.ba-tag {
+  position: absolute;
+  top: 12px; left: 12px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .12em;
+  padding: 4px 12px;
+  line-height: 1;
+}
+.ba-before { background: rgba(20,16,12,.6); color: rgba(255,255,255,.85); }
+.ba-after  { background: var(--brownL); color: var(--white); }
+.ba-arrow {
+  font-size: 26px;
+  color: var(--brownL);
+  font-weight: 300;
+  text-align: center;
+  user-select: none;
+}
+@media (max-width: 960px) {
+  .ba-pair { grid-template-columns: 1fr; gap: 12px; }
+  .ba-arrow { transform: rotate(90deg); font-size: 22px; }
+  .ba-list { gap: 48px; }
+  #beforeafter { padding: 56px 24px; }
+}
+
+#voice {
+  background: var(--dark);
+  padding: 80px 80px;
+  position: relative;
+  overflow: hidden;
+}
+.voice-inner { max-width: 1020px; margin: 0 auto; position: relative; z-index: 1; }
+
+.voice-eyebrow {
+  display: block;
+  font-size: 11px;
+  letter-spacing: .22em;
+  color: rgba(255,255,255,.3);
+  text-transform: uppercase;
+  font-weight: 400;
+  margin-bottom: 16px;
+}
+.voice-title {
+  font-family: var(--serif);
+  font-size: clamp(24px, 3vw, 40px);
+  font-weight: 400;
+  color: var(--white);
+  line-height: 1.55;
+  letter-spacing: .02em;
+  margin-bottom: 8px;
+}
+.voice-sub {
+  font-size: 14px;
+  color: rgba(255,255,255,.38);
+  font-weight: 300;
+  margin-bottom: 44px;
+  letter-spacing: .03em;
+}
+
+.voice-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+.voice-card {
+  background: rgba(255,255,255,.038);
+  border: 1px solid rgba(255,255,255,.07);
+  padding: 36px 32px;
+  display: flex;
+  flex-direction: column;
+}
+.voice-line-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(6,199,85,.1);
+  border: 1px solid rgba(6,199,85,.18);
+  color: rgba(6,199,85,.85);
+  font-size: 10px;
+  letter-spacing: .14em;
+  padding: 4px 12px;
+  margin-bottom: 18px;
+  width: fit-content;
+  font-weight: 400;
+}
+.voice-line-tag svg {
+  width: 11px; height: 11px; fill: currentColor; flex-shrink: 0;
+}
+.voice-stars {
+  font-size: 13px;
+  letter-spacing: 3px;
+  color: var(--brownL);
+  margin-bottom: 18px;
+  line-height: 1;
+}
+.voice-quote {
+  font-size: 14px;
+  color: rgba(255,255,255,.6);
+  line-height: 2.15;
+  font-weight: 300;
+  flex: 1;
+  border-left: 2px solid rgba(196,149,106,.3);
+  padding-left: 18px;
+  margin-bottom: 24px;
+  font-style: normal;
+}
+.voice-meta {
+  border-top: 1px solid rgba(255,255,255,.06);
+  padding-top: 18px;
+}
+.voice-name {
+  font-family: var(--serif);
+  font-size: 14px;
+  font-weight: 400;
+  color: rgba(255,255,255,.65);
+  margin-bottom: 5px;
+}
+.voice-detail {
+  font-size: 11px;
+  color: rgba(255,255,255,.25);
+  line-height: 1.8;
+  font-weight: 300;
+}
+.voice-cost {
+  display: inline-block;
+  margin-top: 6px;
+  font-size: 11px;
+  color: var(--brownL);
+  letter-spacing: .05em;
+}
+
+/* ══════════════════════════════════════
+   NATURAL（O: 自然素材 × 健康）
+══════════════════════════════════════ */
+#natural { background: var(--cream2); }
+
+.natural-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: center;
+}
+.natural-photos {
+  position: relative;
+  height: 460px;
+}
+.natural-photos img {
+  position: absolute;
+  object-fit: cover;
+}
+.natural-photos img:nth-child(1) {
+  left: 0; top: 0;
+  width: 62%;
+  height: 100%;
+}
+.natural-photos img:nth-child(2) {
+  right: 0; top: 0;
+  width: 43%;
+  height: 55%;
+  box-shadow: -8px 8px 32px rgba(0,0,0,.15);
+}
+.natural-photos img:nth-child(3) {
+  right: 0; bottom: 0;
+  width: 43%;
+  height: 41%;
+  box-shadow: -8px -4px 28px rgba(0,0,0,.1);
+}
+
+.natural-list {
+  list-style: none;
+  margin-top: 24px;
+}
+.natural-list li {
+  padding: 14px 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 14px;
+  color: var(--mid);
+  line-height: 1.9;
+  font-weight: 300;
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+}
+.natural-list li:last-child { border: none; }
+.natural-list li::before {
+  content: '';
+  display: block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--brownL);
+  flex-shrink: 0;
+  margin-top: 9px;
+}
+
+/* ══════════════════════════════════════
+   STRENGTHS（O: 4つの強み）
+══════════════════════════════════════ */
+#strengths { background: var(--cream); }
+
+.strengths-header { margin-bottom: 44px; }
+
+.strength-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+  border-radius: 0;
+  overflow: hidden;
+}
+.strength-item {
+  background: var(--white);
+  padding: 40px;
+  transition: background .25s;
+}
+.strength-item:hover { background: var(--cream); }
+.str-num {
+  display: block;
+  font-size: 10px;
+  letter-spacing: .2em;
+  color: var(--brownL);
+  font-weight: 500;
+  margin-bottom: 14px;
+  text-transform: uppercase;
+}
+.str-title {
+  font-family: var(--serif);
+  font-size: 19px;
+  font-weight: 500;
+  color: var(--charcoal);
+  line-height: 1.6;
+  margin-bottom: 12px;
+}
+.str-body {
+  font-size: 14px;
+  color: var(--mid);
+  line-height: 2;
+  font-weight: 300;
+}
+/* 建築家連携：ダークカード（他と同サイズ） */
+.strength-item.dark {
+  background: var(--dark);
+}
+.strength-item.dark:hover { background: var(--dark2); }
+.strength-item.dark .str-num { color: var(--brownL); }
+.strength-item.dark .str-title { color: var(--white); }
+.strength-item.dark .str-body { color: rgba(255,255,255,.5); }
+.str-photo { display: none; }
+.str-photo img { width: 100%; height: 100%; object-fit: cover; }
+
+/* ══════════════════════════════════════
+   VISUAL（感情セクション：漆喰手形）
+══════════════════════════════════════ */
+#visual {
+  position: relative;
+  height: 460px;
+  overflow: hidden;
+}
+#visual img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(.38);
+}
+.visual-text {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 40px;
+}
+.visual-eyebrow {
+  font-size: 11px;
+  letter-spacing: .22em;
+  color: rgba(255,255,255,.45);
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+.visual-title {
+  font-family: var(--serif);
+  font-size: clamp(22px, 3.5vw, 42px);
+  font-weight: 400;
+  color: var(--white);
+  line-height: 1.75;
+  letter-spacing: .04em;
+  max-width: 640px;
+  margin-bottom: 20px;
+}
+.visual-body {
+  font-size: 15px;
+  color: rgba(255,255,255,.6);
+  line-height: 2;
+  max-width: 500px;
+  font-weight: 300;
+}
+
+/* ══════════════════════════════════════
+   ARCHITECT（O: 差別化）
+══════════════════════════════════════ */
+#architect {
+  background: var(--dark);
+  padding: 80px 80px;
+}
+.architect-inner {
+  max-width: 1020px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: start;
+}
+.arch-badge {
+  display: inline-block;
+  border: 1px solid rgba(255,255,255,.2);
+  color: rgba(255,255,255,.5);
+  font-size: 10px;
+  letter-spacing: .18em;
+  padding: 5px 13px;
+  margin-bottom: 24px;
+  text-transform: uppercase;
+  font-weight: 300;
+  border-radius: 0;
+}
+.arch-title {
+  font-family: var(--serif);
+  font-size: clamp(22px, 2.8vw, 36px);
+  font-weight: 400;
+  color: var(--white);
+  line-height: 1.65;
+  letter-spacing: .03em;
+  margin-bottom: 20px;
+}
+.arch-body {
+  font-size: 14px;
+  color: rgba(255,255,255,.5);
+  line-height: 2.1;
+  font-weight: 300;
+}
+.arch-body a {
+  color: rgba(255,255,255,.65);
+  border-bottom: 1px solid rgba(255,255,255,.2);
+  transition: color .2s;
+}
+.arch-body a:hover { color: var(--white); }
+.arch-flow { margin-top: 8px; }
+.arch-flow-item {
+  padding: 18px 0;
+  border-bottom: 1px solid rgba(255,255,255,.07);
+  display: grid;
+  grid-template-columns: 64px 1fr;
+  gap: 16px;
+  align-items: start;
+}
+.arch-flow-item:last-child { border: none; }
+.arch-size {
+  font-size: 10px;
+  letter-spacing: .12em;
+  color: rgba(255,255,255,.28);
+  text-transform: uppercase;
+  font-weight: 300;
+  padding-top: 3px;
+}
+.arch-flow-item h4 {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--white);
+  margin-bottom: 4px;
+}
+.arch-flow-item p {
+  font-size: 13px;
+  color: rgba(255,255,255,.4);
+  line-height: 1.9;
+  font-weight: 300;
+}
+
+/* ══════════════════════════════════════
+   SUBSIDY（N: Narrowing）
+══════════════════════════════════════ */
+#subsidy {
+  background: var(--cream);
+  position: relative;
+  overflow: hidden;
+}
+#subsidy > .inner { position: relative; z-index: 1; }
+
+.subsidy-hero {
+  background: var(--charcoal);
+  padding: 44px 52px;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 44px;
+  align-items: center;
+  margin-bottom: 28px;
+  border-radius: 0;
+  position: relative;
+  overflow: hidden;
+}
+.subsidy-hero::after {
+  content: '';
+  position: absolute;
+  bottom: -40px; right: -40px;
+  width: 200px; height: 200px;
+  border-radius: 50%;
+  background: rgba(255,255,255,.025);
+  pointer-events: none;
+}
+.sub-amount {
+  font-family: var(--serif);
+  font-size: 72px;
+  font-weight: 300;
+  color: var(--white);
+  line-height: 1;
+  letter-spacing: -.02em;
+  position: relative;
+  z-index: 1;
+}
+.sub-amount small {
+  font-size: 14px;
+  display: block;
+  color: rgba(255,255,255,.45);
+  letter-spacing: .06em;
+  font-weight: 300;
+  margin-bottom: 6px;
+}
+.sub-amount span { font-size: 22px; color: rgba(255,255,255,.65); }
+.sub-desc { position: relative; z-index: 1; }
+.sub-desc h3 {
+  font-family: var(--serif);
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--white);
+  margin-bottom: 10px;
+}
+.sub-desc p {
+  font-size: 14px;
+  color: rgba(255,255,255,.5);
+  line-height: 2;
+  font-weight: 300;
+}
+
+.subsidy-table-scroll { overflow-x: auto; }
+.subsidy-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+.subsidy-table thead th {
+  background: var(--charcoal);
+  color: var(--white);
+  padding: 12px 18px;
+  text-align: left;
+  font-weight: 400;
+  font-size: 12px;
+  letter-spacing: .06em;
+}
+.subsidy-table tbody td {
+  padding: 14px 18px;
+  border-bottom: 1px solid var(--border);
+  color: var(--mid);
+  font-weight: 300;
+}
+.subsidy-table tbody tr:hover td { background: var(--cream2); }
+.subsidy-table .amount {
+  font-family: var(--serif);
+  font-weight: 500;
+  color: var(--brown);
+  font-size: 15px;
+}
+.subsidy-note {
+  margin-top: 18px;
+  font-size: 13px;
+  color: var(--light);
+  font-weight: 300;
+  padding-left: 16px;
+  border-left: 2px solid var(--border);
+  line-height: 1.9;
+}
+.subsidy-urgency {
+  margin-top: 28px;
+  background: linear-gradient(135deg, #fff8f3, #fef3eb);
+  border: 1px solid #e8c9a8;
+  border-left: 3px solid var(--brown);
+  padding: 20px 24px;
+  border-radius: 0;
+  font-size: 14px;
+  color: var(--brown);
+  font-weight: 400;
+  line-height: 1.8;
+}
+
+/* ══════════════════════════════════════
+   FLOW（A: 行動）
+══════════════════════════════════════ */
+#flow {
+  background: var(--cream2);
+  position: relative;
+  overflow: hidden;
+}
+#flow > .inner { position: relative; z-index: 1; }
+
+.flow-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  border: 1px solid var(--border);
+  border-radius: 0;
+  overflow: hidden;
+  margin-top: 40px;
+}
+.flow-item {
+  padding: 40px 36px;
+  background: var(--white);
+  border-right: 1px solid var(--border);
+  position: relative;
+}
+.flow-item:last-child { border: none; }
+.flow-num {
+  display: block;
+  font-family: var(--serif);
+  font-size: 44px;
+  font-weight: 300;
+  color: var(--border);
+  line-height: 1;
+  margin-bottom: 18px;
+}
+.flow-item h3 {
+  font-family: var(--serif);
+  font-size: 17px;
+  font-weight: 500;
+  color: var(--charcoal);
+  margin-bottom: 10px;
+}
+.flow-item p {
+  font-size: 14px;
+  color: var(--mid);
+  line-height: 2;
+  font-weight: 300;
+}
+.flow-cta {
+  text-align: center;
+  margin-top: 36px;
+}
+
+/* ══════════════════════════════════════
+   FAQ
+══════════════════════════════════════ */
+#faq { background: var(--cream); }
+
+.faq-list { margin-top: 36px; }
+.faq-item { border-bottom: 1px solid var(--border); }
+.faq-item:first-child { border-top: 1px solid var(--border); }
+.faq-q {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 18px 0;
+  cursor: pointer;
+  gap: 24px;
+}
+.faq-q-inner {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+.faq-q-mark {
+  font-family: var(--serif);
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--brownL);
+  flex-shrink: 0;
+  padding-top: 1px;
+}
+.faq-q-text {
+  font-size: 15px;
+  font-weight: 400;
+  color: var(--charcoal);
+  line-height: 1.7;
+  transition: color .2s;
+}
+.faq-q:hover .faq-q-text { color: var(--brown); }
+.faq-icon {
+  width: 20px; height: 20px;
+  flex-shrink: 0;
+  position: relative;
+  margin-top: 3px;
+}
+.faq-icon::before, .faq-icon::after {
+  content: '';
+  position: absolute;
+  background: var(--mid);
+  border-radius: 1px;
+  transition: transform .3s, opacity .3s;
+}
+.faq-icon::before { width: 100%; height: 1px; top: 50%; left: 0; transform: translateY(-50%); }
+.faq-icon::after  { width: 1px; height: 100%; left: 50%; top: 0; transform: translateX(-50%); }
+.faq-item.open .faq-icon::after { transform: translateX(-50%) rotate(90deg); opacity: 0; }
+.faq-a {
+  display: none;
+  padding: 0 0 20px 32px;
+  font-size: 14px;
+  color: var(--mid);
+  line-height: 2;
+  font-weight: 300;
+}
+.faq-item.open .faq-a { display: block; }
+
+/* ══════════════════════════════════════
+   CTA（A: クロージング）
+══════════════════════════════════════ */
+#cta {
+  background: var(--dark);
+  padding: 96px 80px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+#cta::before {
+  content: '';
+  position: absolute;
+  top: -100px; left: 50%;
+  transform: translateX(-50%);
+  width: 600px; height: 600px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(61,90,64,.3) 0%, transparent 70%);
+  pointer-events: none;
+}
+.cta-eyebrow {
+  display: block;
+  font-size: 11px;
+  letter-spacing: .22em;
+  color: rgba(255,255,255,.3);
+  text-transform: uppercase;
+  margin-bottom: 24px;
+  position: relative;
+}
+.cta-title {
+  font-family: var(--serif);
+  font-size: clamp(32px, 5vw, 60px);
+  font-weight: 300;
+  color: var(--white);
+  line-height: 1.5;
+  letter-spacing: .02em;
+  margin-bottom: 16px;
+  position: relative;
+}
+.cta-body {
+  font-size: 15px;
+  color: rgba(255,255,255,.5);
+  line-height: 2;
+  font-weight: 300;
+  max-width: 500px;
+  margin: 0 auto 36px;
+  position: relative;
+}
+.btn-line-lg {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background: var(--line);
+  color: var(--white);
+  padding: 18px 52px;
+  font-size: 16px;
+  font-weight: 500;
+  border-radius: 0;
+  letter-spacing: .04em;
+  transition: background .2s, transform .15s;
+  position: relative;
+}
+.btn-line-lg:hover { background: var(--line2); transform: translateY(-2px); }
+.btn-line-lg svg { width: 21px; height: 21px; fill: currentColor; }
+.cta-notes {
+  margin-top: 24px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 24px;
+  position: relative;
+}
+.cta-note {
+  font-size: 12px;
+  color: rgba(255,255,255,.3);
+  letter-spacing: .05em;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.cta-note::before { content: '—'; color: rgba(255,255,255,.15); }
+.cta-tel {
+  margin-top: 36px;
+  font-size: 13px;
+  color: rgba(255,255,255,.3);
+  font-weight: 300;
+  position: relative;
+}
+.cta-tel a {
+  font-family: var(--serif);
+  font-size: 21px;
+  color: rgba(255,255,255,.65);
+  letter-spacing: .06em;
+  margin-left: 10px;
+  font-weight: 400;
+  transition: color .2s;
+}
+.cta-tel a:hover { color: var(--white); }
+
+/* ══════════════════════════════════════
+   FOOTER
+══════════════════════════════════════ */
+footer {
+  background: #110F0D;
+  padding: 52px 80px 36px;
+}
+.footer-inner { max-width: 1020px; margin: 0 auto; }
+.footer-top {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 40px;
+  padding-bottom: 36px;
+  border-bottom: 1px solid rgba(255,255,255,.06);
+}
+.footer-logo {
+  font-family: var(--serif);
+  font-size: 21px;
+  font-weight: 400;
+  color: var(--white);
+  letter-spacing: .12em;
+  margin-bottom: 10px;
+}
+.footer-tagline {
+  font-size: 12px;
+  color: rgba(255,255,255,.28);
+  line-height: 1.9;
+  font-weight: 300;
+}
+.footer-col-title {
+  font-size: 10px;
+  letter-spacing: .2em;
+  color: rgba(255,255,255,.28);
+  text-transform: uppercase;
+  margin-bottom: 16px;
+  font-weight: 300;
+}
+.footer-col address,
+.footer-col p {
+  font-size: 13px;
+  color: rgba(255,255,255,.38);
+  line-height: 2.1;
+  font-style: normal;
+  font-weight: 300;
+}
+.footer-col a {
+  color: rgba(255,255,255,.38);
+  transition: color .2s;
+}
+.footer-col a:hover { color: rgba(255,255,255,.75); }
+.footer-bottom {
+  padding-top: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.footer-copy {
+  font-size: 11px;
+  color: rgba(255,255,255,.2);
+  font-weight: 300;
+}
+.footer-links { display: flex; gap: 20px; }
+.footer-links a {
+  font-size: 11px;
+  color: rgba(255,255,255,.2);
+  letter-spacing: .06em;
+  transition: color .2s;
+}
+.footer-links a:hover { color: rgba(255,255,255,.5); }
+
+/* ══════════════════════════════════════
+   VIEW TOGGLE BUTTON
+══════════════════════════════════════ */
+#view-toggle {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: rgba(30,26,22,.9);
+  backdrop-filter: blur(10px);
+  border-radius: 30px;
+  padding: 9px 9px 9px 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  z-index: 500;
+  box-shadow: 0 4px 24px rgba(0,0,0,.2);
+}
+#view-toggle-label {
+  font-size: 11px;
+  color: rgba(255,255,255,.42);
+  letter-spacing: .07em;
+  white-space: nowrap;
+  font-family: var(--sans);
+}
+#view-toggle-btn {
+  background: rgba(255,255,255,.1);
+  border: 1px solid rgba(255,255,255,.16);
+  color: rgba(255,255,255,.8);
+  font-size: 11px;
+  padding: 6px 14px;
+  border-radius: 20px;
+  cursor: pointer;
+  letter-spacing: .04em;
+  transition: background .2s;
+  white-space: nowrap;
+  font-family: var(--sans);
+  line-height: 1;
+}
+#view-toggle-btn:hover { background: rgba(255,255,255,.2); }
+
+/* ══════════════════════════════════════
+   RESPONSIVE（960px以下）
+══════════════════════════════════════ */
+@media (max-width: 960px) {
+  #hero { min-height: 80vh; align-items: flex-end; }
+  .hero-text { padding: 80px 40px 52px; max-width: 100%; }
+  .solution-inner { grid-template-columns: 1fr; gap: 48px; }
+  .natural-grid { grid-template-columns: 1fr; gap: 44px; }
+  .natural-photos { height: auto; display: grid; grid-template-columns: 1fr 1fr; gap: 4px; }
+  .natural-photos img { position: static; width: 100%; height: 160px; box-shadow: none; }
+  .natural-photos img:nth-child(1) { grid-row: 1 / 3; height: 100%; }
+  .voice-grid { grid-template-columns: 1fr; }
+  #voice { padding: 60px 40px; }
+  .strength-item.dark { grid-template-columns: 1fr; gap: 28px; }
+  .str-photo { height: 200px; }
+  .architect-inner { grid-template-columns: 1fr; gap: 44px; }
+  .subsidy-hero { grid-template-columns: 1fr; gap: 24px; padding: 36px 28px; text-align: center; }
+  .sub-amount { font-size: 56px; }
+  .works-grid { grid-template-columns: 1fr 1fr; }
+  .pain-grid { grid-template-columns: 1fr; gap: 16px; }
+  .flow-grid { grid-template-columns: 1fr; }
+  .flow-item { border-right: none; border-bottom: 1px solid var(--border); }
+  .flow-item:last-child { border-bottom: none; }
+  .footer-top { grid-template-columns: 1fr; gap: 32px; }
+  .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
+  .section { padding: 60px 40px; }
+  #pain, #solution, #architect { padding: 60px 40px; }
+  #cta { padding: 72px 40px; }
+  footer { padding: 44px 40px 32px; }
+  nav { padding: 0 28px; }
+  .nav-menu { display: none; }
+}
+
+@media (max-width: 600px) {
+  .works-grid { grid-template-columns: 1fr; }
+  .hero-stats { flex-wrap: wrap; gap: 8px 0; }
+  .stat-item { border-right: none; border-bottom: 1px solid rgba(255,255,255,.08); padding: 10px 0; flex: 0 0 50%; }
+  .stat-item:last-child { border: none; }
+  .hero-text { padding: 60px 24px 40px; }
+}
+
+/* ══════════════════════════════════════
+   MOBILE VIEW OVERRIDES
+══════════════════════════════════════ */
+.mobile-view body { font-size: 15px; }
+.mobile-view #notice { position: relative; top: auto; font-size: 11px; padding: 9px 16px; }
+.mobile-view nav { top: 0; padding: 0 20px; }
+.mobile-view .nav-menu { display: none; }
+.mobile-view #hero { min-height: 75vh; align-items: flex-end; }
+.mobile-view .hero-text { padding: 60px 24px 44px; max-width: 100%; }
+.mobile-view .hero-sub { max-width: 100%; }
+.mobile-view .btn-line { align-self: stretch; justify-content: center; }
+.mobile-view .hero-stats { flex-wrap: wrap; }
+.mobile-view .section { padding: 48px 24px; }
+.mobile-view #pain, .mobile-view #solution { padding: 48px 24px; }
+.mobile-view #architect { padding: 48px 24px; }
+.mobile-view #cta { padding: 64px 24px; }
+.mobile-view footer { padding: 40px 24px 28px; }
+.mobile-view .pain-grid { grid-template-columns: 1fr; gap: 14px; }
+.mobile-view .solution-inner { grid-template-columns: 1fr; gap: 40px; }
+.mobile-view #beforeafter { padding: 56px 24px; }
+.mobile-view .ba-pair { grid-template-columns: 1fr; gap: 12px; }
+.mobile-view .ba-arrow { transform: rotate(90deg); font-size: 22px; }
+.mobile-view .ba-list { gap: 48px; }
+.mobile-view #voice { padding: 48px 24px; }
+.mobile-view .voice-grid { grid-template-columns: 1fr; }
+.mobile-view .voice-card { padding: 28px 24px; }
+.mobile-view .natural-grid { grid-template-columns: 1fr; gap: 36px; }
+.mobile-view .natural-photos { height: auto; display: grid; grid-template-columns: 1fr 1fr; gap: 4px; }
+.mobile-view .natural-photos img { position: static; width: 100%; height: 140px; box-shadow: none; }
+.mobile-view .natural-photos img:nth-child(1) { grid-row: 1 / 3; height: 100%; }
+.mobile-view .strength-item { padding: 32px 24px; }
+.mobile-view .strength-item.dark { grid-template-columns: 1fr; gap: 24px; }
+.mobile-view .str-photo { height: 180px; }
+.mobile-view .works-grid { grid-template-columns: 1fr; }
+.mobile-view .works-header { flex-direction: column; align-items: flex-start; gap: 12px; }
+.mobile-view .architect-inner { grid-template-columns: 1fr; gap: 36px; }
+.mobile-view .subsidy-hero { grid-template-columns: 1fr; gap: 20px; padding: 32px 20px; text-align: center; }
+.mobile-view .sub-amount { font-size: 52px; }
+.mobile-view .subsidy-table-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+.mobile-view .subsidy-table { min-width: 480px; }
+.mobile-view .flow-grid { grid-template-columns: 1fr; }
+.mobile-view .flow-item { border-right: none; border-bottom: 1px solid var(--border); padding: 32px 24px; }
+.mobile-view .flow-item:last-child { border-bottom: none; }
+.mobile-view .btn-line-lg { width: 100%; justify-content: center; padding: 18px 24px; }
+.mobile-view footer { padding: 40px 24px 28px; }
+.mobile-view .footer-top { grid-template-columns: 1fr; gap: 28px; }
+.mobile-view .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
+
+</style>
+</head>
+<body>
+
+<!-- SVGアイコン定義 -->
+<svg style="width:0;height:0;position:absolute" xmlns="http://www.w3.org/2000/svg">
+  <symbol id="icon-line" viewBox="0 0 24 24">
+    <path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057.1 18.08.114 18.1.136 18.116a19.9 19.9 0 0 0 5.993 3.03.077.077 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.993a.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03z"/>
+  </symbol>
+</svg>
+
+<!-- ─── NOTICE BAR（Narrowing予告） ─── -->
+<div id="notice">
+  ⚠️ 2026年度 省エネ補助金、予算終了次第で受付終了。最大<strong>217万円</strong>の補助が受けられる今年中のご相談をおすすめします。
+  <a href="#subsidy">詳しく見る →</a>
+</div>
+
+<!-- ─── NAV ─── -->
+<nav id="nav">
+  <div class="nav-logo">いとう建舎</div>
+  <ul class="nav-menu">
+    <li><a href="#works">施工事例</a></li>
+    <li><a href="#about">強み</a></li>
+    <li><a href="#subsidy">補助金</a></li>
+    <li><a href="#voice">お客様の声</a></li>
+    <li><a href="#flow">ご相談の流れ</a></li>
+  </ul>
+  <a href="#cta" class="nav-cta-btn">
+    <svg><use href="#icon-line"/></svg>
+    LINE無料相談
+  </a>
+</nav>
+
+<!-- ─── HERO（P: Problem + A: Affinity）─── -->
+<section id="hero">
+  <div class="hero-bg">
+    <img src="./images/LINE_ALBUM_20260411_260411_22.jpg" alt="いとう建舎 無垢材の広間施工事例">
+  </div>
+  <div class="hero-text">
+    <span class="hero-badge js-reveal">兵庫県朝来市 ／ 但馬エリア</span>
+    <h1 class="hero-title js-reveal d1">
+      「いつか木の家に」──<br>
+      その想いを、<span class="underline">今日だけ</span>動かしてみませんか？
+    </h1>
+    <p class="hero-sub js-reveal d2">
+      何年も後回しにしてきた方へ。<br>
+      「高そう」「どこに頼めばいいかわからない」、その心配は一旦置いてください。<br><br>
+      LINEで写真を<strong style="color:rgba(255,255,255,.9);">1枚</strong>送るだけ。但馬の職人が<strong style="color:rgba(255,255,255,.9);">翌日に</strong>概算をお伝えします。<br>
+      床だけ・一室だけ・断っても、すべて大丈夫です。
+    </p>
+    <a href="https://line.me/R/ti/p/@359qixnl" class="btn-line js-reveal d3" target="_blank" rel="noopener">
+      <svg><use href="#icon-line"/></svg>
+      LINEで写真を送る（無料・翌日回答）
+    </a>
+    <div class="hero-notes js-reveal d4">
+      <span class="hero-note">相談・見積・現地調査すべて無料</span>
+      <span class="hero-note">部分リフォームOK</span>
+      <span class="hero-note">しつこい営業は一切なし</span>
+    </div>
+    <p class="hero-tel js-reveal d4">お電話：<a href="tel:0796668380">079-666-8380</a></p>
+    <div class="hero-stats js-reveal d4">
+      <div class="stat-item">
+        <span class="stat-num">70%</span>
+        <div class="stat-label">受注率<br>業界平均の約2倍</div>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num">250+</span>
+        <div class="stat-label">累計施工件数</div>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num">翌日</span>
+        <div class="stat-label">概算をご回答</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── PAIN（A: Affinity 共感）─── -->
+<section id="pain">
+  <div class="sec-bg sec-bg-light">
+    <img src="./images/LINE_ALBUM_20260411_260411_26.jpg" alt="" aria-hidden="true">
+  </div>
+  <div class="pain-inner">
+    <span class="section-eyebrow js-reveal">よくあるお悩み</span>
+    <h2 class="section-title js-reveal d1">リフォームを<br>後回しにしてきた理由、<br>ありませんか？</h2>
+    <p class="section-body js-reveal d2">「相談したら断りにくい」「うちには高すぎる」──そんな心配が、動けない理由になっていませんか？その不安、すべて取り除きます。</p>
+    <div class="pain-grid">
+      <div class="pain-card js-reveal">
+        <span class="pain-icon">🏠</span>
+        <h3>「無垢の木にしたいけど、高そうで踏み出せない」</h3>
+        <p>床<strong>1室から</strong>・窓<strong>1箇所から</strong>でも対応しています。「全部やらなきゃ」は誤解です。まず概算だけ聞いてみてください。費用は0円です。</p>
+      </div>
+      <div class="pain-card js-reveal d1">
+        <span class="pain-icon">👶</span>
+        <h3>「子どものアトピーが心配。家の素材を変えたい」</h3>
+        <p>無垢材・漆喰・珪藻土は化学物質を含まず、空気を浄化します。「子どもの健康を守りたい」というご相談を、特に大切にしています。</p>
+      </div>
+      <div class="pain-card js-reveal d2">
+        <span class="pain-icon">📞</span>
+        <h3>「どこに頼めばいいかわからない。断りにくそう」</h3>
+        <p>金額確認だけ・見積だけでも構いません。<strong>しつこい営業は一切しません</strong>。LINEなら写真1枚送るだけ。気軽に「いくら？」だけでも聞いてください。</p>
+      </div>
+    </div>
+
+    <!-- Solution インライン -->
+    <div class="sol-inline js-reveal d3">
+      <div class="sol-inline-inner">
+        <div>
+          <p class="sol-inline-lead">写真1枚で、翌日に答えが届く。</p>
+          <p class="sol-inline-body">難しいことは何もありません。気になる場所の写真をLINEに送るだけ。<br>相談・見積・現地調査、すべて無料。断っても大丈夫。</p>
+        </div>
+        <a href="https://line.me/R/ti/p/@359qixnl" class="btn-line" target="_blank" rel="noopener" style="flex-shrink:0;">
+          <svg><use href="#icon-line"/></svg>
+          LINEで写真を送る（無料）
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── WORKS + BEFORE/AFTER（統合）─── -->
+<section id="works" class="section">
+  <div class="inner">
+    <div class="works-header">
+      <div>
+        <span class="section-eyebrow js-reveal">Works</span>
+        <h2 class="section-title js-reveal d1" style="margin-bottom:0">施工事例</h2>
+      </div>
+      <a href="https://itou-kensya.com/" class="works-link js-reveal" target="_blank" rel="noopener">すべての事例を見る →</a>
+    </div>
+
+    <!-- 最初の3枚 -->
+    <div class="works-grid">
+      <div class="work-card js-reveal">
+        <div class="work-thumb"><img src="./images/LINE_ALBUM_20260411_260411_22.jpg" alt="無垢材の広間"></div>
+        <span class="work-tag">Renovation</span>
+        <h3 class="work-title">無垢材を活かした広間・造作本棚</h3>
+        <p class="work-desc">天井・壁・床を杉材で統一。造作棚が部屋全体を温かみある空間に。</p>
+      </div>
+      <div class="work-card js-reveal d1">
+        <div class="work-thumb"><img src="./images/LINE_ALBUM_20260411_260411_17.jpg" alt="足元ライトの広間"></div>
+        <span class="work-tag">Kominka</span>
+        <h3 class="work-title">足元ライトと木板天井の空間</h3>
+        <p class="work-desc">フットライトで夜も美しい空間演出。木の温もりと現代デザインが融合。</p>
+      </div>
+      <div class="work-card js-reveal d2">
+        <div class="work-thumb"><img src="./images/LINE_ALBUM_20260411_260411_10.jpg" alt="木格子の廊下"></div>
+        <span class="work-tag">Reform</span>
+        <h3 class="work-title">木格子スクリーンのある廊下</h3>
+        <p class="work-desc">廊下だけのリフォームでも、印象はこんなに変わります。</p>
+      </div>
+    </div>
+
+    <!-- 残り3枚（アコーディオン） -->
+    <div class="expand-wrap">
+      <button class="expand-btn" data-target="works-more">
+        もっと見る <i class="eicon">▼</i>
+      </button>
+    </div>
+    <div class="expand-content" id="works-more">
+      <div class="works-grid" style="margin-top:24px;">
+        <div class="work-card js-reveal">
+          <div class="work-thumb"><img src="./images/LINE_ALBUM_20260411_260411_6.jpg" alt="木枠の洗面台"></div>
+          <span class="work-tag">Water</span>
+          <h3 class="work-title">木枠×タイルの洗面台</h3>
+          <p class="work-desc">洗面台だけのリフォームも対応。唯一無二の空間に仕上げます。</p>
+        </div>
+        <div class="work-card js-reveal d1">
+          <div class="work-thumb"><img src="./images/LINE_ALBUM_20260411_260411_5.jpg" alt="和室リフォーム"></div>
+          <span class="work-tag">Japanese Room</span>
+          <h3 class="work-title">琉球畳と木枠の和モダン和室</h3>
+          <p class="work-desc">古い和室を現代的なデザインに。木の枠と緑の畳が清々しい空間。</p>
+        </div>
+        <div class="work-card js-reveal d2">
+          <div class="work-thumb"><img src="./images/LINE_ALBUM_20260411_260411_3.jpg" alt="総杉張りの仏間"></div>
+          <span class="work-tag">Interior</span>
+          <h3 class="work-title">総杉張りの仏間空間</h3>
+          <p class="work-desc">天井・壁・棚すべてを杉材で統一。間接照明との組み合わせが美しい。</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Before / After（統合） -->
+    <div class="ba-section-head">
+      <span class="section-eyebrow js-reveal">Before / After</span>
+      <h3 class="section-title js-reveal d1" style="font-size:clamp(22px,2.8vw,36px);margin-bottom:8px;">写真で見る、変化のリアル。</h3>
+      <p class="section-body js-reveal d2" style="margin-bottom:32px;">古くなった壁・床・階段・和室が、いとう建舎の手で生まれ変わります。</p>
+
+      <!-- Case 01（常時表示） -->
+      <div class="ba-item js-reveal">
+        <div class="ba-label-head">Case 01 ｜ 壁リフォーム（杉材張替）</div>
+        <div class="ba-pair">
+          <div class="ba-photo">
+            <img src="./images/case01_before_壁_杉材張替前.jpg" alt="壁リフォーム前">
+            <span class="ba-tag ba-before">Before</span>
+          </div>
+          <div class="ba-arrow">→</div>
+          <div class="ba-photo">
+            <img src="./images/case01_after_壁_杉材張替後.jpg" alt="壁リフォーム後">
+            <span class="ba-tag ba-after">After</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 残り3ケース（アコーディオン） -->
+      <div class="expand-wrap">
+        <button class="expand-btn" data-target="ba-more">
+          他の施工事例を見る <i class="eicon">▼</i>
+        </button>
+      </div>
+      <div class="expand-content" id="ba-more">
+        <div class="ba-list" style="margin-top:40px;">
+          <div class="ba-item js-reveal">
+            <div class="ba-label-head">Case 02 ｜ 階段リフォーム</div>
+            <div class="ba-pair">
+              <div class="ba-photo">
+                <img src="./images/case02_before_階段_01.jpg" alt="階段リフォーム前">
+                <span class="ba-tag ba-before">Before</span>
+              </div>
+              <div class="ba-arrow">→</div>
+              <div class="ba-photo">
+                <img src="./images/case02_after_階段_01.jpg" alt="階段リフォーム後">
+                <span class="ba-tag ba-after">After</span>
+              </div>
+            </div>
+          </div>
+          <div class="ba-item js-reveal d1">
+            <div class="ba-label-head">Case 03 ｜ 玄関リフォーム</div>
+            <div class="ba-pair">
+              <div class="ba-photo">
+                <img src="./images/case03b_before_玄関_タイル壁.jpg" alt="玄関リフォーム前">
+                <span class="ba-tag ba-before">Before</span>
+              </div>
+              <div class="ba-arrow">→</div>
+              <div class="ba-photo">
+                <img src="./images/case03b_after_玄関_新壁材.jpg" alt="玄関リフォーム後">
+                <span class="ba-tag ba-after">After</span>
+              </div>
+            </div>
+          </div>
+          <div class="ba-item js-reveal d2">
+            <div class="ba-label-head">Case 04 ｜ 和室 → 洋室リノベーション</div>
+            <div class="ba-pair">
+              <div class="ba-photo">
+                <img src="./images/case05_before_和室_01.jpg" alt="和室リノベーション前">
+                <span class="ba-tag ba-before">Before</span>
+              </div>
+              <div class="ba-arrow">→</div>
+              <div class="ba-photo">
+                <img src="./images/case05_after_洋室_02.jpg" alt="洋室リノベーション後">
+                <span class="ba-tag ba-after">After</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── VOICE（お客様の声）─── -->
+<section id="voice">
+  <div class="sec-bg sec-bg-dark">
+    <img src="./images/LINE_ALBUM_20260411_260411_17.jpg" alt="" aria-hidden="true">
+  </div>
+  <div class="voice-inner">
+    <span class="voice-eyebrow js-reveal">Customer Voice</span>
+    <h2 class="voice-title js-reveal d1">「まずLINEで1枚」が、<br>きっかけになりました。</h2>
+    <p class="voice-sub js-reveal d2" style="font-size:11px;color:rgba(255,255,255,.22);">※実際の感想をもとに再構成したものです</p>
+
+    <!-- 2件（常時表示） -->
+    <div class="voice-grid">
+      <div class="voice-card js-reveal">
+        <span class="voice-line-tag">
+          <svg viewBox="0 0 24 24"><path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057.1 18.08.114 18.1.136 18.116a19.9 19.9 0 0 0 5.993 3.03.077.077 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.993a.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03z"/></svg>
+          LINEで相談
+        </span>
+        <div class="voice-stars">★★★★★</div>
+        <blockquote class="voice-quote">子どものアトピーが心配で、床材を変えたいとずっと思っていました。でも業者に連絡するのがこわくて後回しに。LINEに床の写真を1枚送ってみたら、翌朝に「床だけでも全然OKです」という返信が。金額も思ったより手が届く範囲で、すぐにお願いしました。今は素足で歩くのが気持ちよくて、子どもも喜んでいます。
+        </blockquote>
+        <div class="voice-meta">
+          <div class="voice-name">M・T 様（35歳・主婦）</div>
+          <div class="voice-detail">朝来市 ／ リビング床 無垢フローリング張替え</div>
+          <span class="voice-cost">施工費用目安：約38万円〜</span>
+        </div>
+      </div>
+      <div class="voice-card js-reveal d1">
+        <span class="voice-line-tag">
+          <svg viewBox="0 0 24 24"><path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057.1 18.08.114 18.1.136 18.116a19.9 19.9 0 0 0 5.993 3.03.077.077 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.993a.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03z"/></svg>
+          LINEで相談 ＋ 補助金活用
+        </span>
+        <div class="voice-stars">★★★★★</div>
+        <blockquote class="voice-quote">実家が冬になると寒くて、毎年帰省のたびに心配していました。市外に住んでいるので地元業者への連絡も不安でしたが、LINEで窓の写真を送ったら翌日に「補助金が使えますよ」と返信が。補助金のことは全然知らなかったので助かりました。親から「暖かくなった」という電話が来たとき、頼んで良かったと思いました。
+        </blockquote>
+        <div class="voice-meta">
+          <div class="voice-name">K・Y 様（44歳・会社員）</div>
+          <div class="voice-detail">養父市 ／ 実家の内窓設置（先進的窓リノベ補助金活用）</div>
+          <span class="voice-cost">補助金適用後の実質費用：約12万円〜</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 残り2件（アコーディオン） -->
+    <div class="expand-wrap">
+      <button class="expand-btn expand-btn-dark" data-target="voice-more">
+        お客様の声をもっと見る <i class="eicon">▼</i>
+      </button>
+    </div>
+    <div class="expand-content" id="voice-more">
+      <div class="voice-grid" style="margin-top:20px;">
+        <div class="voice-card js-reveal">
+          <span class="voice-line-tag">
+            <svg viewBox="0 0 24 24"><path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057.1 18.08.114 18.1.136 18.116a19.9 19.9 0 0 0 5.993 3.03.077.077 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.993a.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03z"/></svg>
+            LINEで相談
+          </span>
+          <div class="voice-stars">★★★★★</div>
+          <blockquote class="voice-quote">「洗面台だけ頼めるのかな」と半信半疑でLINEに写真を送ったら、「1箇所からでも大丈夫ですよ」とすぐ返事が来て。その丁寧さで信頼でき、廊下も一緒にお願いしました。完成した洗面台は木とタイルの組み合わせで、毎朝見るのが楽しくなりました。
+          </blockquote>
+          <div class="voice-meta">
+            <div class="voice-name">I・H 様（40歳・会社員）</div>
+            <div class="voice-detail">朝来市 ／ 洗面台＋廊下リフォーム</div>
+            <span class="voice-cost">施工費用目安：約55万円〜</span>
+          </div>
+        </div>
+        <div class="voice-card js-reveal d1">
+          <span class="voice-line-tag">
+            <svg viewBox="0 0 24 24"><path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057.1 18.08.114 18.1.136 18.116a19.9 19.9 0 0 0 5.993 3.03.077.077 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.993a.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03z"/></svg>
+            LINEで相談 ＋ ハーフビルド
+          </span>
+          <div class="voice-stars">★★★★★</div>
+          <blockquote class="voice-quote">古い和室が気になりつつ、大掛かりな工事が嫌で後回しにしていました。LINEで写真を送ったら完成イメージを一緒に考えてくれて、「できるところはご自身でもOK」というハーフビルドの提案も。押しつけがましくないところが私には合っていて、今では一番好きな部屋になっています。
+          </blockquote>
+          <div class="voice-meta">
+            <div class="voice-name">S・M 様（52歳・主婦）</div>
+            <div class="voice-detail">朝来市 ／ 和室リフォーム（琉球畳＋木枠造作・ハーフビルド）</div>
+            <span class="voice-cost">施工費用目安：約70万円〜</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── ABOUT（強み：自然素材 + 4つの理由）─── -->
+<section id="about" class="section" style="background:var(--cream);">
+  <div class="inner">
+    <span class="section-eyebrow js-reveal">Why Choose Us</span>
+    <h2 class="section-title js-reveal d1">いとう建舎が選ばれる理由</h2>
+
+    <!-- 自然素材へのこだわり -->
+    <div class="natural-grid js-reveal d2" style="margin-top:48px;">
+      <div class="natural-photos">
+        <img src="./images/LINE_ALBUM_20260411_260411_26.jpg" alt="無垢の床材">
+        <img src="./images/LINE_ALBUM_20260411_260411_11.jpg" alt="木張りのバスルーム">
+        <img src="./images/LINE_ALBUM_20260411_260411_18.jpg" alt="木板天井の部屋">
+      </div>
+      <div>
+        <span class="section-eyebrow" style="margin-bottom:10px;">Natural Materials</span>
+        <h3 class="str-title" style="font-size:clamp(18px,2.2vw,26px);margin-bottom:12px;">木と漆喰が、<br>家族の健康を守る</h3>
+        <p style="font-size:14px;color:var(--mid);line-height:2;font-weight:300;margin-bottom:0;">「自然素材は高い」は誤解です。床一室・窓一箇所からでも導入でき、お子さまのアレルギーやアトピーが気になる方からのご相談を特に歓迎しています。</p>
+        <ul class="natural-list" style="margin-top:16px;">
+          <li>無垢の木の調湿作用で、室内を快適な湿度に保つ</li>
+          <li>杉・ヒノキに含まれる成分がダニ・カビを抑制</li>
+          <li>漆喰壁がVOC（有害物質）を吸着し空気を清浄に</li>
+          <li>足元が冷えにくく、冬でも素足で過ごせる暖かさ</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 4つの強み -->
+    <div class="strength-grid js-reveal d2" style="margin-top:48px;">
+      <div class="strength-item">
+        <span class="str-num">01 — 翌日回答の理由</span>
+        <h3 class="str-title">写真1枚で概算できるのは、<br>250件以上の経験があるから。</h3>
+        <p class="str-body">現地に来なくても、LINEの写真だけで概算が出せます。25年・250件以上の施工実績に裏打ちされた職人の目利きが、翌日回答を実現しています。</p>
+      </div>
+      <div class="strength-item">
+        <span class="str-num">02 — 顔の見える地元職人</span>
+        <h3 class="str-title">大工・電気・水道・左官。<br>「知っている顔」の安心感。</h3>
+        <p class="str-body">朝来市・養父市に根ざした地元の職人チーム。知っている顔が責任を持って仕上げます。下請け任せの工事は行いません。</p>
+      </div>
+      <div class="strength-item">
+        <span class="str-num">03 — 柔軟な提案</span>
+        <h3 class="str-title">部分リフォームOK。<br>ハーフビルド・DIY対応。</h3>
+        <p class="str-body">「洗面台だけ」「床だけ」でも大丈夫。できる作業はご自身で、難しい部分はプロが担当。予算に合わせた家づくりを実現します。</p>
+      </div>
+      <div class="strength-item dark">
+        <div>
+          <span class="str-num">04 — 建築家ネットワーク連携</span>
+          <h3 class="str-title">職人の技術×建築家の設計力。<br>大手に負けないデザインを。</h3>
+          <p class="str-body">登録建築家・中村建築研究室（姫路市）と協働。小修繕から古民家フル再生・新築まで、大手ハウスメーカーに負けない品質・デザインの提案が可能です。</p>
+        </div>
+        <div class="str-photo">
+          <img src="./images/LINE_ALBUM_20260411_260411_28.jpg" alt="職人の木組み技術">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── SUBSIDY（N: Narrowing）─── -->
+<section id="subsidy" class="section">
+  <div class="sec-bg sec-bg-light" style="--sec-overlay:rgba(245,240,232,.80);">
+    <img src="./images/LINE_ALBUM_20260411_260411_10.jpg" alt="" aria-hidden="true">
+  </div>
+  <div class="inner">
+    <span class="section-eyebrow js-reveal">2026年度 国の補助金</span>
+    <h2 class="section-title js-reveal d1">今年中に動いた人だけが<br>最大<span style="color:var(--brown);font-size:1.1em;">217万円</span>得をします</h2>
+    <p class="section-body js-reveal d2">国が推進する2026年度の省エネリフォーム補助金。3つの制度を組み合わせると最大217万円の補助が受けられます。<strong style="color:var(--brown)">予算終了次第で受付終了</strong>のため、「来年でいいか」と思っていると手遅れになります。まずLINEで「補助金が使えるか確認したい」とお送りください。</p>
+    <div class="subsidy-hero js-reveal">
+      <div class="sub-amount">
+        <small>3制度合計 最大</small>
+        217<span>万円</span>
+      </div>
+      <div class="sub-desc">
+        <h3>省エネリフォーム補助金（2026年度）</h3>
+        <p>窓の断熱・断熱改修・給湯器交換など、工事内容に合わせて複数の補助金を同時申請できます。「うちはいくらもらえる？」をLINEで無料でお調べします。</p>
+      </div>
+    </div>
+    <div class="subsidy-table-scroll">
+      <table class="subsidy-table js-reveal">
+        <thead>
+          <tr>
+            <th>補助対象工事</th>
+            <th>制度名</th>
+            <th>補助額（上限）</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>断熱窓への交換（内窓・ガラス・外窓）</td><td>先進的窓リノベ2026事業</td><td class="amount">最大 100万円</td></tr>
+          <tr><td>断熱改修・省エネ設備（壁・屋根・床など）</td><td>みらいエコ住宅2026事業</td><td class="amount">最大 100万円</td></tr>
+          <tr><td>給湯器交換（エコキュートなど）</td><td>給湯省エネ2026事業</td><td class="amount">最大 17万円</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="subsidy-note js-reveal">※補助金は予算の上限に達した時点で受付終了となります。複数の制度を組み合わせた場合の合計額・条件は、工事内容・建物の状況によって異なります。詳しくはLINE無料相談でお気軽にご確認ください。</p>
+    <div class="subsidy-urgency js-reveal">
+      ⚠️ <strong>補助金は予算終了次第、受付を締め切ります。</strong>「来年でいいか」と思っていると使えなくなる可能性があります。まずLINEで「補助金が使えるか確認したい」とお送りください。無料でお調べします。
+    </div>
+  </div>
+</section>
+
+<!-- ─── FLOW（A: Action）─── -->
+<section id="flow" class="section">
+  <div class="sec-bg sec-bg-light">
+    <img src="./images/LINE_ALBUM_20260411 _1_260411_12.jpg" alt="" aria-hidden="true">
+  </div>
+  <div class="inner">
+    <span class="section-eyebrow js-reveal">Process</span>
+    <h2 class="section-title js-reveal d1">相談から完成まで、<br>3ステップ。むずかしいことは何もありません</h2>
+    <p class="section-body js-reveal d2">「何から始めればいいかわからない」という方が最も多い。だから最初の一歩を、できるだけ簡単にしました。まずLINEで写真を1枚送るだけです。</p>
+    <div class="flow-grid js-reveal">
+      <div class="flow-item">
+        <span class="flow-num">01</span>
+        <h3>LINEで写真を送る</h3>
+        <p>気になる場所の写真をLINEに送るだけ。1分で完了。文章は「ここが気になる」だけで十分です。</p>
+      </div>
+      <div class="flow-item">
+        <span class="flow-num">02</span>
+        <h3>翌日に概算をご連絡</h3>
+        <p>写真を確認し、翌日〜2日以内に概算金額をお知らせします。この時点での費用は一切かかりません。</p>
+      </div>
+      <div class="flow-item">
+        <span class="flow-num">03</span>
+        <h3>現地調査（無料）</h3>
+        <p>気になれば、実際に現地を見せてください。正式な見積もりも無料です。断っても大丈夫。</p>
+      </div>
+    </div>
+    <p style="text-align:center;font-size:13px;color:var(--light);margin-top:20px;font-weight:300;">
+      現地調査 → 正式見積 → ご契約 → 施工 → 完成　　受注率 70%
+    </p>
+    <div class="flow-cta js-reveal">
+      <a href="https://line.me/R/ti/p/@359qixnl" class="btn-line" target="_blank" rel="noopener">
+        <svg><use href="#icon-line"/></svg>
+        LINEで写真を送る（無料）
+      </a>
+    </div>
+
+    <!-- FAQ（Flow内に統合） -->
+    <div style="margin-top:64px;padding-top:56px;border-top:1px solid var(--border);">
+      <h3 class="section-title js-reveal" style="font-size:clamp(20px,2.5vw,32px);margin-bottom:0;">よくあるご質問</h3>
+      <div class="faq-list js-reveal d1">
+        <div class="faq-item">
+          <div class="faq-q">
+            <div class="faq-q-inner"><span class="faq-q-mark">Q.</span><span class="faq-q-text">相談・見積だけで終わっても大丈夫ですか？</span></div>
+            <div class="faq-icon"></div>
+          </div>
+          <div class="faq-a">まったく問題ありません。「金額を知りたいだけ」「まだ迷っている」という段階でのご連絡を歓迎しています。しつこい営業は一切行いませんのでご安心ください。</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">
+            <div class="faq-q-inner"><span class="faq-q-mark">Q.</span><span class="faq-q-text">「洗面台だけ」「床だけ」など部分的な工事でも依頼できますか？</span></div>
+            <div class="faq-icon"></div>
+          </div>
+          <div class="faq-a">もちろんです。「洗面台だけ」「床だけ」「窓だけ」など、1箇所からでも対応しています。「全部やらないといけない」という必要はありません。</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">
+            <div class="faq-q-inner"><span class="faq-q-mark">Q.</span><span class="faq-q-text">自然素材は高いと聞きますが、本当ですか？</span></div>
+            <div class="faq-icon"></div>
+          </div>
+          <div class="faq-a">素材の種類や面積によりますが、床1室分の無垢フローリング張り替えであれば、一般的なフロア材との差額はそれほど大きくありません。まず概算をお聞きください。</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">
+            <div class="faq-q-inner"><span class="faq-q-mark">Q.</span><span class="faq-q-text">補助金の手続きもサポートしてもらえますか？</span></div>
+            <div class="faq-icon"></div>
+          </div>
+          <div class="faq-a">はい、サポートしています。LINEでご相談いただければ、どの補助金が使えるか無料でご説明します。</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">
+            <div class="faq-q-inner"><span class="faq-q-mark">Q.</span><span class="faq-q-text">築年数の古い家や古民家でも対応できますか？</span></div>
+            <div class="faq-icon"></div>
+          </div>
+          <div class="faq-a">古い家こそ私たちの得意分野です。築50年以上の古民家再生も多数手がけています。「こんな古い家でも大丈夫？」という場合こそ、ぜひご相談ください。</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">
+            <div class="faq-q-inner"><span class="faq-q-mark">Q.</span><span class="faq-q-text">施工エリアはどこまでですか？</span></div>
+            <div class="faq-icon"></div>
+          </div>
+          <div class="faq-a">朝来市・養父市・豊岡市・神崎郡を中心に、兵庫県全域に対応しています。まずはご相談ください。</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── CTA（A: Action クロージング）─── -->
+<section id="cta">
+  <span class="cta-eyebrow js-reveal">まず、写真を1枚だけ</span>
+  <h2 class="cta-title js-reveal d1">
+    今日送れば、<br>明日には答えが届きます。
+  </h2>
+  <p class="cta-body js-reveal d2">
+    何年も後回しにしてきたリフォーム。「高いかも」「断りにくい」──その心配は一旦忘れて、写真を1枚だけ送ってみてください。翌日には概算が届きます。費用は一切かかりません。
+  </p>
+  <!-- 緊急性バッジ -->
+  <div class="js-reveal d2" style="margin-bottom:28px;">
+    <span style="display:inline-block;background:rgba(196,149,106,.15);border:1px solid rgba(196,149,106,.3);color:var(--brownL);font-size:12px;letter-spacing:.08em;padding:7px 20px;font-weight:400;">⚠️ 2026年度補助金は予算終了次第で受付終了。お早めに。</span>
+  </div>
+  <div class="js-reveal d3">
+    <a href="https://line.me/R/ti/p/@359qixnl" class="btn-line-lg" target="_blank" rel="noopener">
+      <svg><use href="#icon-line"/></svg>
+      LINEで写真を送って無料相談する
+    </a>
+  </div>
+  <div class="cta-notes js-reveal d4">
+    <span class="cta-note">見積・相談・現地調査すべて無料</span>
+    <span class="cta-note">部分リフォームOK</span>
+    <span class="cta-note">補助金申請サポート</span>
+    <span class="cta-note">しつこい営業なし</span>
+  </div>
+  <p class="cta-tel js-reveal d4">
+    お電話でのご相談：<a href="tel:0796668380">079-666-8380</a>
+  </p>
+</section>
+
+<!-- ─── FOOTER ─── -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div>
+        <div class="footer-logo">いとう建舎</div>
+        <p class="footer-tagline">
+          木の家に憧れていませんか？<br>但馬の職人が、あなたと家族の暮らしを守ります。<br>兵庫県朝来市 ／ 但馬エリア全域対応
+        </p>
+      </div>
+      <div>
+        <p class="footer-col-title">Company</p>
+        <address class="footer-col">
+          〒679-3423<br>
+          兵庫県朝来市多々良木249<br>
+          代表：伊藤 紘史<br><br>
+          TEL：<a href="tel:0796668380">079-666-8380</a><br>
+          MAIL：<a href="mailto:hirofumi_itou@itou-kensya.com">hirofumi_itou@itou-kensya.com</a><br><br>
+          兵庫県知事許可（般-3）第651684号<br>
+          二級建築施工管理技士
+        </address>
+      </div>
+      <div>
+        <p class="footer-col-title">Links</p>
+        <p class="footer-col">
+          <a href="https://itou-kensya.com/" target="_blank" rel="noopener">公式ホームページ</a><br>
+          <a href="https://www.instagram.com/h.itou_kensya/" target="_blank" rel="noopener">Instagram @h.itou_kensya</a><br>
+          <a href="https://n-lab.name/" target="_blank" rel="noopener">建築家ネットワーク・ナビ</a>
+        </p>
+        <p class="footer-col-title" style="margin-top:24px;">Service Area</p>
+        <p class="footer-col">朝来市 / 養父市 / 豊岡市<br>神崎郡 / 兵庫県全域</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy">© 2026 いとう建舎 All rights reserved.</p>
+      <div class="footer-links">
+        <a href="https://itou-kensya.com/" target="_blank" rel="noopener">HP</a>
+        <a href="https://www.instagram.com/h.itou_kensya/" target="_blank" rel="noopener">Instagram</a>
+        <span style="color:rgba(255,255,255,.1)">LP制作：株式会社ハウスインフォ</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ─── VIEW TOGGLE ─── -->
+<div id="view-toggle">
+  <span id="view-toggle-label"></span>
+  <button id="view-toggle-btn" onclick="toggleView()"></button>
+</div>
+
+<script>
+// ── スクロールフェードイン ──
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); }
+  });
+}, { threshold: 0.07 });
+document.querySelectorAll('.js-reveal').forEach(el => obs.observe(el));
+
+// ── FAQアコーディオン ──
+document.querySelectorAll('.faq-q').forEach(q => {
+  q.addEventListener('click', () => {
+    const item = q.parentElement;
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  });
+});
+
+// ── 展開アコーディオン（Works / Before/After / Voice） ──
+document.querySelectorAll('.expand-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const targetId = btn.getAttribute('data-target');
+    const content = document.getElementById(targetId);
+    if (!content) return;
+    const isOpen = content.classList.contains('open');
+    content.classList.toggle('open', !isOpen);
+    btn.classList.toggle('active', !isOpen);
+    // ボタンテキストを更新（アイコン部分以外）
+    const icon = btn.querySelector('.eicon');
+    const textNode = [...btn.childNodes].find(n => n.nodeType === 3);
+    if (textNode) {
+      if (!isOpen) {
+        textNode.textContent = btn.dataset.closeText || '閉じる ';
+      } else {
+        textNode.textContent = btn.dataset.openText || btn.dataset.origText || '';
+      }
+    }
+  });
+  // オリジナルテキストを保存
+  const textNode = [...btn.childNodes].find(n => n.nodeType === 3);
+  if (textNode) btn.dataset.origText = textNode.textContent;
+});
+
+// ── ナビスクロール影 ──
+window.addEventListener('scroll', () => {
+  document.getElementById('nav').style.boxShadow =
+    window.scrollY > 60 ? '0 2px 24px rgba(0,0,0,.4)' : 'none';
+}, { passive: true });
+
+// ── PC / スマホ切り替え ──
+function toggleView() {
+  var isMob = document.documentElement.classList.toggle('mobile-view');
+  localStorage.setItem('itou-view', isMob ? 'mobile' : 'pc');
+  updateToggleBtn();
+}
+function updateToggleBtn() {
+  var isMob = document.documentElement.classList.contains('mobile-view');
+  var label = document.getElementById('view-toggle-label');
+  var btn   = document.getElementById('view-toggle-btn');
+  if (!label || !btn) return;
+  label.textContent = isMob ? '現在：スマホ版' : '現在：PC版';
+  btn.textContent   = isMob ? 'PC版に切り替え →' : 'スマホ版に切り替え →';
+}
+document.addEventListener('DOMContentLoaded', updateToggleBtn);
+</script>
+</body>
+</html>
