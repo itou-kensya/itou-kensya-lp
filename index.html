@@ -1370,6 +1370,80 @@ nav {
 }
 .btn-line-lg:hover { background: var(--line2); transform: translateY(-2px); }
 .btn-line-lg svg { width: 21px; height: 21px; fill: currentColor; }
+
+/* ── ボタングループ（LINE + 診断 並列） ── */
+.btn-group {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+.btn-group-lg {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+/* 診断ボタン（暗背景用）*/
+.btn-diag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  border: 1px solid rgba(255,255,255,.30);
+  color: rgba(255,255,255,.78);
+  padding: 15px 26px;
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: .04em;
+  font-family: var(--sans);
+  text-decoration: none;
+  white-space: nowrap;
+  align-self: flex-start;
+  transition: background .2s, border-color .2s, color .2s, transform .15s;
+}
+.btn-diag:hover {
+  background: rgba(255,255,255,.10);
+  border-color: rgba(255,255,255,.50);
+  color: var(--white);
+  transform: translateY(-1px);
+}
+/* 診断ボタン（明背景用）*/
+.btn-diag-onlight {
+  border-color: rgba(44,42,39,.32);
+  color: var(--charcoal);
+  align-self: center;
+}
+.btn-diag-onlight:hover {
+  background: rgba(44,42,39,.06);
+  border-color: var(--charcoal);
+  color: var(--charcoal);
+}
+/* 診断ボタン large（CTA用）*/
+.btn-diag-lg {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  background: transparent;
+  border: 1px solid rgba(255,255,255,.30);
+  color: rgba(255,255,255,.78);
+  padding: 17px 36px;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: .04em;
+  font-family: var(--sans);
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background .2s, border-color .2s, color .2s, transform .15s;
+}
+.btn-diag-lg:hover {
+  background: rgba(255,255,255,.10);
+  border-color: rgba(255,255,255,.50);
+  color: var(--white);
+  transform: translateY(-2px);
+}
+
 .cta-notes {
   margin-top: 24px;
   display: flex;
@@ -1600,6 +1674,11 @@ footer {
 .mobile-view .flow-item { border-right: none; border-bottom: 1px solid var(--border); padding: 32px 24px; }
 .mobile-view .flow-item:last-child { border-bottom: none; }
 .mobile-view .btn-line-lg { width: 100%; justify-content: center; padding: 18px 24px; }
+.mobile-view .btn-group { flex-direction: column; align-items: stretch; }
+.mobile-view .btn-group .btn-line { justify-content: center; }
+.mobile-view .btn-group .btn-diag { justify-content: center; align-self: stretch; }
+.mobile-view .btn-group-lg { flex-direction: column; align-items: stretch; }
+.mobile-view .btn-diag-lg { justify-content: center; width: 100%; }
 .mobile-view footer { padding: 40px 24px 28px; }
 .mobile-view .footer-top { grid-template-columns: 1fr; gap: 28px; }
 .mobile-view .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
@@ -1659,10 +1738,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       LINEで写真を<strong style="color:rgba(255,255,255,.9);">1枚</strong>送るだけ。但馬の職人が<strong style="color:rgba(255,255,255,.9);">最短翌日に</strong>概算をお伝えします。<br>
       床だけ・一室だけ・断っても、すべて大丈夫です。
     </p>
-    <a href="https://line.me/R/ti/p/@359qixnl" class="btn-line js-reveal d3" target="_blank" rel="noopener">
-      <svg><use href="#icon-line"/></svg>
-      LINEで写真を送る（無料・最短翌日回答）
-    </a>
+    <div class="btn-group js-reveal d3">
+      <a href="https://line.me/R/ti/p/@359qixnl" class="btn-line" target="_blank" rel="noopener">
+        <svg><use href="#icon-line"/></svg>
+        LINEで写真を送る（無料・最短翌日回答）
+      </a>
+      <a href="./reform-diagnosis.html" class="btn-diag">
+        📋 リフォーム緊急度を診断する
+      </a>
+    </div>
     <div class="hero-notes js-reveal d4">
       <span class="hero-note">相談・見積・現地調査すべて無料</span>
       <span class="hero-note">部分リフォームOK</span>
@@ -2103,10 +2187,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       現地調査 → 正式見積 → ご契約 → 施工 → 完成　　受注率 70%
     </p>
     <div class="flow-cta js-reveal">
-      <a href="https://line.me/R/ti/p/@359qixnl" class="btn-line" target="_blank" rel="noopener">
-        <svg><use href="#icon-line"/></svg>
-        LINEで写真を送る（無料）
-      </a>
+      <div class="btn-group">
+        <a href="https://line.me/R/ti/p/@359qixnl" class="btn-line" target="_blank" rel="noopener">
+          <svg><use href="#icon-line"/></svg>
+          LINEで写真を送る（無料）
+        </a>
+        <a href="./reform-diagnosis.html" class="btn-diag btn-diag-onlight">
+          📋 リフォーム緊急度を診断する
+        </a>
+      </div>
     </div>
 
     <!-- FAQ（Flow内に統合） -->
@@ -2173,10 +2262,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="js-reveal d2" style="margin-bottom:28px;">
     <span style="display:inline-block;background:rgba(196,149,106,.15);border:1px solid rgba(196,149,106,.3);color:var(--brownL);font-size:12px;letter-spacing:.08em;padding:7px 20px;font-weight:400;">⚠️ 2026年度補助金は予算終了次第で受付終了。お早めに。</span>
   </div>
-  <div class="js-reveal d3">
+  <div class="btn-group-lg js-reveal d3">
     <a href="https://line.me/R/ti/p/@359qixnl" class="btn-line-lg" target="_blank" rel="noopener">
       <svg><use href="#icon-line"/></svg>
       LINEで写真を送って無料相談する
+    </a>
+    <a href="./reform-diagnosis.html" class="btn-diag-lg">
+      📋 緊急度を無料で診断する
     </a>
   </div>
   <div class="cta-notes js-reveal d4">
