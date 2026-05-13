@@ -583,6 +583,23 @@ a { color: inherit; text-decoration: none; }
   transform: translateY(-2px);
 }
 
+/* 結果画面 3ボタングループ */
+.result-btn-group {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 20px;
+}
+.result-btn-group .btn-cta,
+.result-btn-group .btn-cta-green,
+.result-btn-group .btn-cta-sub {
+  display: block;
+  width: 100%;
+  text-align: center;
+  margin-top: 0;
+  box-sizing: border-box;
+}
+
 /* Share */
 .result-share {
   text-align: center;
@@ -1327,9 +1344,11 @@ function showResult() {
       '<div class="result-cta">' +
         '<p class="result-cta-heading">' + r.ctaHeading + '</p>' +
         '<p class="result-cta-text">' + r.ctaText + '</p>' +
-        '<a href="' + r.ctaUrl + '" class="btn-cta" target="_blank" rel="noopener">' + r.ctaBtn + '</a>' +
-        (r.ctaSub ? '<br><a href="https://itou-kensya.com/" class="btn-cta-sub" target="_blank" rel="noopener">リフォーム事例を見る</a>' : '') +
-        '<br><a href="#subsidyInfo" class="btn-cta-green">補助金について詳しく見る</a>' +
+        '<div class="result-btn-group">' +
+          '<a href="https://itou-kensya.com/" class="btn-cta" target="_blank" rel="noopener">HPを見る</a>' +
+          '<a href="https://line.me/R/ti/p/@359qixnl" class="btn-cta-green" target="_blank" rel="noopener">LINEで相談する</a>' +
+          '<a href="#subsidyInfo" class="btn-cta-sub">補助金について詳しく見る</a>' +
+        '</div>' +
       '</div>' +
 
       '<div class="result-share">' +
