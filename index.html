@@ -1864,6 +1864,23 @@ footer {
 .mobile-view #sticky-cta .btn-line { padding: 12px 20px; font-size: 13px; flex: 1; justify-content: center; }
 .mobile-view .sticky-sub { display: none; }
 
+/* ── 第二期改修：電話CTA・補助金ライン・スクロール誘導・ライトボックス ── */
+.btn-tel{display:inline-flex;align-items:center;gap:10px;background:var(--brown);color:var(--white);padding:18px 34px;font-size:16px;font-weight:600;letter-spacing:.03em;transition:background .2s,transform .15s;align-self:flex-start;box-shadow:0 6px 20px rgba(124,82,64,.35);}
+.btn-tel:hover{background:#634133;transform:translateY(-1px);}
+.btn-tel svg{width:20px;height:20px;fill:currentColor;}
+.btn-tel .btn-tel-num{font-family:var(--serif);font-size:19px;letter-spacing:.02em;margin-left:2px;}
+.mobile-view .btn-tel{align-self:stretch;width:100%;justify-content:center;padding:16px 20px;}
+.mobile-view .btn-tel .btn-tel-num{font-size:17px;}
+.hero-subsidy-line{margin:4px 0 2px;display:inline-flex;align-items:center;gap:8px;background:rgba(124,82,64,.22);border:1px solid rgba(196,149,106,.45);color:#F0E2D2;padding:8px 14px;font-size:13px;font-weight:500;letter-spacing:.02em;}
+.hero-scroll-more{margin-top:16px;display:inline-block;font-size:12px;color:rgba(255,255,255,.55);letter-spacing:.08em;}
+.hero-scroll-more:hover{color:rgba(255,255,255,.8);}
+#sticky-cta .btn-tel{padding:12px 24px;font-size:14px;box-shadow:none;}
+#sticky-cta .btn-tel .btn-tel-num{display:none;}
+.mobile-view #sticky-cta .btn-tel{padding:12px 14px;font-size:13px;flex:1;justify-content:center;}
+.lb-overlay{position:fixed;inset:0;z-index:500;background:rgba(0,0,0,.88);display:none;align-items:center;justify-content:center;padding:20px;cursor:zoom-out;}
+.lb-overlay.open{display:flex;}
+.lb-overlay img{max-width:100%;max-height:100%;box-shadow:0 10px 40px rgba(0,0,0,.5);}
+
 </style>
 </head>
 <body>
@@ -1877,6 +1894,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <svg style="width:0;height:0;position:absolute" xmlns="http://www.w3.org/2000/svg">
   <symbol id="icon-line" viewBox="0 0 24 24">
     <path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057.1 18.08.114 18.1.136 18.116a19.9 19.9 0 0 0 5.993 3.03.077.077 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.993a.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03z"/>
+  </symbol>
+  <symbol id="icon-phone" viewBox="0 0 24 24">
+    <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
   </symbol>
 </svg>
 
@@ -1917,25 +1937,26 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <p class="hero-sub js-reveal d2">
       何年も後回しにしてきた方へ。<br>
       「高そう」「どこに頼めばいいかわからない」、その心配は一旦置いてください。<br><br>
-      LINEで写真を<strong style="color:rgba(255,255,255,.9);">1枚</strong>送るだけ。但馬の職人が<strong style="color:rgba(255,255,255,.9);">最短翌日に</strong><span style="white-space:nowrap">概算をお伝えします。</span><br>
+      お電話1本、またはLINEで写真を<strong style="color:rgba(255,255,255,.9);">1枚</strong>送るだけ。但馬の職人が<strong style="color:rgba(255,255,255,.9);">最短翌日に</strong><span style="white-space:nowrap">概算をお伝えします。</span><br>
       床だけ・一室だけ・断っても、すべて大丈夫です。
     </p>
+    <a class="hero-subsidy-line js-reveal d3" href="#subsidy">🪟 窓リノベなら補助金 最大100万円の対象かも</a>
     <div class="btn-group js-reveal d3">
+      <a href="tel:0796668380" class="btn-tel">
+        <svg><use href="#icon-phone"/></svg>
+        お電話で無料相談 <span class="btn-tel-num">079-666-8380</span>
+      </a>
       <a href="https://line.me/R/ti/p/@359qixnl" class="btn-line" target="_blank" rel="noopener">
         <svg><use href="#icon-line"/></svg>
-        LINEで写真を送る（無料・最短翌日回答）
-      </a>
-      <a href="./reform-diagnosis.html" class="btn-diag">
-        📋 リフォーム緊急度を診断する
+        LINEで写真を送る（無料）
       </a>
     </div>
-    <p class="js-reveal d3" style="margin-top:14px;font-size:12px;color:rgba(255,255,255,.5);letter-spacing:.03em;">今すぐでなくてもOK。「いずれリフォームしたい」方も、まず友達追加だけでも大丈夫です。</p>
     <div class="hero-notes js-reveal d4">
       <span class="hero-note">相談・見積・現地調査すべて無料</span>
       <span class="hero-note">部分リフォームOK</span>
       <span class="hero-note">しつこい営業は一切なし</span>
     </div>
-    <p class="hero-tel js-reveal d4">お電話：<a href="tel:0796668380">079-666-8380</a></p>
+    <a href="#subsidy" class="hero-scroll-more js-reveal d4">↓ もっと詳しく見る</a>
     <div class="hero-stats js-reveal d4">
       <div class="stat-item">
         <span class="stat-num">70%</span>
@@ -2503,10 +2524,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <!-- ─── STICKY CTA（スクロール追従LINE） ─── -->
 <div id="sticky-cta">
-  <span class="sticky-sub">登録無料 ／ いざという時すぐ相談できる</span>
+  <span class="sticky-sub">まずは無料相談 ／ お気軽にどうぞ</span>
+  <a href="tel:0796668380" class="btn-tel">
+    <svg><use href="#icon-phone"/></svg>
+    電話で相談
+  </a>
   <a href="https://line.me/R/ti/p/@359qixnl" class="btn-line" target="_blank" rel="noopener">
     <svg><use href="#icon-line"/></svg>
-    LINE友達追加（無料）
+    LINE
   </a>
 </div>
 
@@ -2654,6 +2679,48 @@ document.addEventListener('DOMContentLoaded', updateToggleBtn);
 document.querySelectorAll('#impact-banner img, #works img, #voice img, .sec-bg img').forEach(function(img) {
   if (!img.loading) img.loading = 'lazy';
 });
+
+// ── CV計測: 電話タップ・LINEタップを GTM(dataLayer)へ送信 ──
+// GTM(GTM-P4L86LCQ)側で event=cta_click をトリガーにGA4イベントタグを作成して使用する。
+(function() {
+  window.dataLayer = window.dataLayer || [];
+  function track(type, label) {
+    window.dataLayer.push({ event: 'cta_click', cta_type: type, cta_label: (label || '').slice(0, 60) });
+  }
+  document.addEventListener('click', function(e) {
+    var a = e.target.closest && e.target.closest('a');
+    if (!a) return;
+    var href = a.getAttribute('href') || '';
+    if (href.indexOf('tel:') === 0) {
+      track('tel', a.textContent.trim());
+    } else if (href.indexOf('line.me') > -1 || href.indexOf('lin.ee') > -1) {
+      track('line', a.textContent.trim());
+    }
+  }, true);
+})();
+
+// ── 施工写真ライトボックス（デッドクリック対策：写真タップで拡大表示） ──
+(function() {
+  var imgs = document.querySelectorAll('.work-thumb img');
+  if (!imgs.length) return;
+  var ov = document.createElement('div');
+  ov.className = 'lb-overlay';
+  ov.setAttribute('aria-hidden', 'true');
+  ov.innerHTML = '<img alt="">';
+  document.body.appendChild(ov);
+  var lbImg = ov.querySelector('img');
+  imgs.forEach(function(im) {
+    im.style.cursor = 'zoom-in';
+    im.addEventListener('click', function() {
+      lbImg.src = im.currentSrc || im.src;
+      lbImg.alt = im.alt || '';
+      ov.classList.add('open');
+    });
+  });
+  function close() { ov.classList.remove('open'); }
+  ov.addEventListener('click', close);
+  document.addEventListener('keydown', function(e) { if (e.key === 'Escape') close(); });
+})();
 </script>
 </body>
 </html>
