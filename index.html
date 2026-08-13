@@ -235,7 +235,7 @@ nav {
   flex-direction: column;
   justify-content: flex-end;
   max-width: 680px;
-  padding: 180px 80px 72px;
+  padding: 120px 80px 56px;
 }
 
 .hero-badge {
@@ -284,10 +284,10 @@ nav {
 .btn-line {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
   background: var(--line);
   color: var(--white);
-  padding: 16px 36px;
+  padding: 13px 28px;
   font-size: 15px;
   font-weight: 500;
   border-radius: 0;
@@ -297,6 +297,34 @@ nav {
 }
 .btn-line:hover { background: var(--line2); transform: translateY(-1px); }
 .btn-line svg { width: 19px; height: 19px; fill: currentColor; }
+
+/* 信頼バー：誰が対応するのかを最初の画面で示す */
+.hero-trust {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  margin: 0 0 16px;
+}
+.hero-trust-photo {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid rgba(196,149,106,.55);
+  flex: 0 0 auto;
+}
+.hero-trust-body { display: flex; flex-direction: column; gap: 3px; }
+.hero-trust-main {
+  font-size: 15px;
+  font-weight: 500;
+  color: rgba(255,255,255,.94);
+  letter-spacing: .02em;
+}
+.hero-trust-sub {
+  font-size: 12px;
+  color: rgba(255,255,255,.58);
+  letter-spacing: .02em;
+}
 
 .hero-notes {
   margin: 0 0 18px;
@@ -1640,17 +1668,26 @@ footer {
    MOBILE VIEW OVERRIDES
 ══════════════════════════════════════ */
 .mobile-view body { font-size: 15px; }
-.mobile-view #notice { position: relative; top: auto; font-size: 10.5px; padding: 7px 14px; letter-spacing: .02em; line-height: 1.6; }
-.mobile-view nav { top: 0; padding: 0 20px; }
+.mobile-view #notice { position: relative; top: auto; font-size: 10px; padding: 5px 12px; letter-spacing: .01em; line-height: 1.55; }
+.mobile-view nav { top: 0; padding: 0 18px; height: 52px; }
+.mobile-view .nav-cta-btn { padding: 9px 14px; font-size: 12px; }
+.mobile-view .nav-logo { font-size: 16px; }
 .mobile-view .nav-menu { display: none; }
 .mobile-view #hero { min-height: 75vh; align-items: flex-end; }
-.mobile-view .hero-text { padding: 32px 24px 36px; max-width: 100%; }
+.mobile-view .hero-text { padding: 20px 22px 32px; max-width: 100%; }
 .mobile-view .hero-sub { max-width: 100%; }
-/* 第三期: ファーストビュー内にCTAを収めるための圧縮（375x812想定） */
-.mobile-view .hero-badge { margin-bottom: 12px; }
-.mobile-view .hero-title { margin-bottom: 14px; }
-.mobile-view .hero-notes { margin-bottom: 16px; }
-.mobile-view .btn-tel { padding: 15px 20px; }
+/* 第三期: ファーストビュー内に「信頼→安心材料→電話→LINE→補助金→スクロール誘導」を収める（375x812想定） */
+.mobile-view .hero-title { margin-bottom: 10px; line-height: 1.38; }
+.mobile-view .hero-trust { margin-bottom: 10px; gap: 11px; }
+.mobile-view .hero-notes { margin-bottom: 10px; }
+.mobile-view .hero-subsidy-line { margin-top: 9px; padding: 7px 12px; font-size: 12.5px; }
+.mobile-view .hero-scroll-more { margin-top: 8px; padding-top: 9px; font-size: 12.5px; }
+.mobile-view .btn-group { gap: 10px; }
+.mobile-view .btn-tel { padding: 12px 18px; }
+.mobile-view .btn-line { padding: 11px 18px; }
+.mobile-view .btn-main { font-size: 15px; }
+.mobile-view .btn-note { font-size: 11.5px; }
+.mobile-view .hero-trust-photo { width: 52px; height: 52px; }
 .mobile-view .btn-line { align-self: stretch; justify-content: center; }
 .mobile-view .hero-stats { flex-wrap: wrap; }
 .mobile-view .section { padding: 48px 24px; }
@@ -1870,15 +1907,23 @@ footer {
 .mobile-view .sticky-sub { display: none; }
 
 /* ── 第二期改修：電話CTA・補助金ライン・スクロール誘導・ライトボックス ── */
-.btn-tel{display:inline-flex;align-items:center;gap:10px;background:var(--brown);color:var(--white);padding:18px 34px;font-size:16px;font-weight:600;letter-spacing:.03em;transition:background .2s,transform .15s;align-self:flex-start;box-shadow:0 6px 20px rgba(124,82,64,.35);}
+.btn-tel{display:inline-flex;align-items:center;gap:12px;background:var(--brown);color:var(--white);padding:14px 28px;font-size:16px;font-weight:600;letter-spacing:.03em;transition:background .2s,transform .15s;align-self:flex-start;box-shadow:0 6px 20px rgba(124,82,64,.35);}
+/* CTAボタン内の2段テキスト（主コピー＋その場で得られること） */
+.btn-body{display:flex;flex-direction:column;align-items:flex-start;gap:2px;}
+.btn-main{font-size:16px;font-weight:600;line-height:1.35;}
+.btn-note{font-size:12px;font-weight:400;letter-spacing:.01em;opacity:.82;line-height:1.4;}
 .btn-tel:hover{background:#634133;transform:translateY(-1px);}
 .btn-tel svg{width:20px;height:20px;fill:currentColor;}
 .btn-tel .btn-tel-num{font-family:var(--serif);font-size:19px;letter-spacing:.02em;margin-left:2px;}
 .mobile-view .btn-tel{align-self:stretch;width:100%;justify-content:center;padding:16px 20px;}
 .mobile-view .btn-tel .btn-tel-num{font-size:17px;}
 .hero-subsidy-line{margin:14px 0 0;display:inline-flex;align-items:center;gap:8px;background:rgba(124,82,64,.22);border:1px solid rgba(196,149,106,.45);color:#F0E2D2;padding:8px 14px;font-size:13px;font-weight:500;letter-spacing:.02em;}
-.hero-scroll-more{margin-top:14px;display:inline-block;font-size:12px;color:rgba(255,255,255,.55);letter-spacing:.08em;}
-.hero-scroll-more:hover{color:rgba(255,255,255,.8);}
+/* スクロール誘導：下に何があるかを明示し、矢印を動かして気づかせる */
+.hero-scroll-more{margin-top:16px;padding-top:14px;display:inline-flex;align-items:center;gap:10px;font-size:13px;color:rgba(255,255,255,.78);letter-spacing:.04em;border-top:1px solid rgba(255,255,255,.16);}
+.hero-scroll-more:hover{color:#fff;}
+.hero-scroll-arrow{display:inline-block;font-size:15px;animation:heroBounce 1.8s ease-in-out infinite;}
+@keyframes heroBounce{0%,100%{transform:translateY(0);}50%{transform:translateY(5px);}}
+@media (prefers-reduced-motion: reduce){.hero-scroll-arrow{animation:none;}}
 #sticky-cta .btn-tel{padding:12px 24px;font-size:14px;box-shadow:none;}
 #sticky-cta .btn-tel .btn-tel-num{display:none;}
 .mobile-view #sticky-cta .btn-tel{padding:12px 14px;font-size:13px;flex:1;justify-content:center;}
@@ -1907,7 +1952,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <!-- ─── NOTICE BAR（Narrowing予告） ─── -->
 <div id="notice">
-  ⚠️ 2026年度 省エネ補助金、予算終了次第で受付終了。最大<strong>217万円</strong>の補助が受けられる今年中のご相談をおすすめします。
+  ⚠️ 補助金は予算終了次第で受付終了（最大<strong>217万円</strong>）
   <a href="#subsidy">詳しく見る →</a>
 </div>
 
@@ -1933,12 +1978,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <img src="./images/LINE_ALBUM_20260411_260411_22.jpg?v=2" alt="いとう建舎 無垢材の広間施工事例">
   </div>
   <div class="hero-text">
-    <span class="hero-badge js-reveal">兵庫県朝来市 ／ 但馬エリア</span>
     <h1 class="hero-title js-reveal d1">
       但馬のリフォームは<br>
       <span class="underline">地元の大工</span>が直接<br>
       おうかがいします
     </h1>
+    <!-- 信頼バー：誰が対応するのかを最初の画面で示す -->
+    <div class="hero-trust js-reveal d1">
+      <img class="hero-trust-photo" src="./images/owner_profile.jpg?v=2" alt="いとう建舎 代表 伊藤" width="56" height="56">
+      <span class="hero-trust-body">
+        <span class="hero-trust-main">代表大工・伊藤が直接お答えします</span>
+        <span class="hero-trust-sub">兵庫県朝来市・養父市 ／ 累計250件 ・ 受注率70%</span>
+      </span>
+    </div>
     <div class="hero-notes js-reveal d2">
       <span class="hero-note">相談・現地調査・見積すべて無料</span>
       <span class="hero-note">床だけ・一室だけOK</span>
@@ -1947,18 +1999,24 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="btn-group js-reveal d2">
       <a href="tel:0796668380" class="btn-tel">
         <svg><use href="#icon-phone"/></svg>
-        お電話で無料相談 <span class="btn-tel-num">079-666-8380</span>
+        <span class="btn-body">
+          <span class="btn-main">お電話で無料相談 <span class="btn-tel-num">079-666-8380</span></span>
+          <span class="btn-note">その場で概算をお伝えします（9:00〜18:00）</span>
+        </span>
       </a>
       <a href="https://line.me/R/ti/p/@359qixnl" class="btn-line" target="_blank" rel="noopener">
         <svg><use href="#icon-line"/></svg>
-        LINEで写真を送る（無料）
+        <span class="btn-body">
+          <span class="btn-main">LINEで写真を送る（無料）</span>
+          <span class="btn-note">写真1枚でOK。最短翌日に概算が届きます</span>
+        </span>
       </a>
     </div>
     <a class="hero-subsidy-line js-reveal d3" href="#subsidy">🪟 窓リノベなら補助金 最大100万円の対象かも</a>
-    <p class="hero-sub js-reveal d3">
-      写真を1枚送るだけ。但馬の職人が<strong style="color:rgba(255,255,255,.9);">最短翌日に</strong><span style="white-space:nowrap">概算をお伝えします。</span>
-    </p>
-    <a href="#subsidy" class="hero-scroll-more js-reveal d4">↓ もっと詳しく見る</a>
+    <a href="#impact-banner" class="hero-scroll-more js-reveal d4">
+      <span>施工事例・補助金・費用の目安はこの下に</span>
+      <span class="hero-scroll-arrow" aria-hidden="true">↓</span>
+    </a>
     <div class="hero-stats js-reveal d4">
       <div class="stat-item">
         <span class="stat-num">70%</span>
