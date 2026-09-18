@@ -609,8 +609,18 @@ nav {
   grid-template-columns: repeat(3, 1fr);
   gap: 24px;
 }
-.work-card { overflow: hidden; }
+.work-card {
+  overflow: hidden;
+  cursor: pointer;
+}
+.work-card:focus-visible,
+.ba-photo:focus-visible,
+.impact-ba-photo:focus-visible {
+  outline: 3px solid var(--brownL);
+  outline-offset: 4px;
+}
 .work-thumb {
+  position: relative;
   overflow: hidden;
   margin-bottom: 16px;
   border-radius: 0;
@@ -621,7 +631,24 @@ nav {
   object-fit: cover;
   transition: transform .5s ease;
 }
-.work-card:hover .work-thumb img { transform: scale(1.04); }
+.work-card:hover .work-thumb img,
+.work-card:focus-visible .work-thumb img { transform: scale(1.04); }
+.work-thumb::after,
+.ba-photo::after,
+.impact-ba-photo::after {
+  content: '＋ 写真を拡大';
+  position: absolute;
+  right: 8px;
+  bottom: 8px;
+  z-index: 2;
+  padding: 5px 9px;
+  background: rgba(30,26,22,.78);
+  color: #fff;
+  font-size: 10px;
+  line-height: 1;
+  letter-spacing: .04em;
+  pointer-events: none;
+}
 .work-tag {
   display: block;
   font-size: 10px;
@@ -723,7 +750,7 @@ nav {
   gap: 16px;
   align-items: center;
 }
-.ba-photo { position: relative; overflow: hidden; }
+.ba-photo { position: relative; overflow: hidden; cursor: zoom-in; }
 .ba-photo img {
   width: 100%;
   aspect-ratio: 4/3;
@@ -1755,7 +1782,7 @@ footer {
   gap: 12px;
   align-items: center;
 }
-.impact-ba-photo { position: relative; overflow: hidden; border-radius: 0; }
+.impact-ba-photo { position: relative; overflow: hidden; border-radius: 0; cursor: zoom-in; }
 .impact-ba-photo img {
   width: 100%;
   aspect-ratio: 4/3;
@@ -1929,7 +1956,9 @@ footer {
 .mobile-view #sticky-cta .btn-tel{padding:12px 14px;font-size:13px;flex:1;justify-content:center;}
 .lb-overlay{position:fixed;inset:0;z-index:500;background:rgba(0,0,0,.88);display:none;align-items:center;justify-content:center;padding:20px;cursor:zoom-out;}
 .lb-overlay.open{display:flex;}
-.lb-overlay img{max-width:100%;max-height:100%;box-shadow:0 10px 40px rgba(0,0,0,.5);}
+.lb-overlay img{max-width:100%;max-height:calc(100% - 36px);box-shadow:0 10px 40px rgba(0,0,0,.5);cursor:default;}
+.lb-close{position:absolute;top:16px;right:16px;width:44px;height:44px;border:1px solid rgba(255,255,255,.55);border-radius:50%;background:rgba(30,26,22,.72);color:#fff;font-size:26px;line-height:1;cursor:pointer;}
+.lb-help{position:absolute;left:20px;right:20px;bottom:12px;color:rgba(255,255,255,.78);font-size:12px;text-align:center;pointer-events:none;}
 
 </style>
 </head>
@@ -1993,7 +2022,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
     <div class="hero-notes js-reveal d2">
       <span class="hero-note">相談・現地調査・見積すべて無料</span>
-      <span class="hero-note">床だけ・一室だけOK</span>
+      <span class="hero-note">外装・断熱・窓・一室だけでも相談OK</span>
       <span class="hero-note">しつこい営業は一切なし</span>
     </div>
     <div class="btn-group js-reveal d2">
@@ -2759,27 +2788,73 @@ document.querySelectorAll('#impact-banner img, #works img, #voice img, .sec-bg i
   }, true);
 })();
 
-// ── 施工写真ライトボックス（デッドクリック対策：写真タップで拡大表示） ──
+// ── 施工写真ライトボックス（デッドクリック対策） ──
 (function() {
-  var imgs = document.querySelectorAll('.work-thumb img');
-  if (!imgs.length) return;
+  var targets = [];
+  document.querySelectorAll('.work-card').forEach(function(card) {
+    var img = card.querySelector('.work-thumb img');
+    if (img) targets.push({ el: card, img: img, type: 'work' });
+  });
+  document.querySelectorAll('.ba-photo, .impact-ba-photo').forEach(function(photo) {
+    var img = photo.querySelector('img');
+    if (img) targets.push({ el: photo, img: img, type: 'before_after' });
+  });
+  if (!targets.length) return;
+
   var ov = document.createElement('div');
   ov.className = 'lb-overlay';
+  ov.setAttribute('role', 'dialog');
+  ov.setAttribute('aria-modal', 'true');
   ov.setAttribute('aria-hidden', 'true');
-  ov.innerHTML = '<img alt="">';
+  ov.innerHTML = '<button type="button" class="lb-close" aria-label="拡大写真を閉じる">×</button><img alt=""><p class="lb-help">画面の外側または×ボタンで閉じます</p>';
   document.body.appendChild(ov);
   var lbImg = ov.querySelector('img');
-  imgs.forEach(function(im) {
-    im.style.cursor = 'zoom-in';
-    im.addEventListener('click', function() {
-      lbImg.src = im.currentSrc || im.src;
-      lbImg.alt = im.alt || '';
-      ov.classList.add('open');
+  var closeBtn = ov.querySelector('.lb-close');
+  var previousFocus = null;
+
+  function openPhoto(target) {
+    previousFocus = target.el;
+    lbImg.src = target.img.currentSrc || target.img.src;
+    lbImg.alt = target.img.alt || '施工写真';
+    ov.classList.add('open');
+    ov.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+    closeBtn.focus();
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+      event: 'photo_open',
+      photo_type: target.type,
+      photo_label: (target.img.alt || '').slice(0, 60)
+    });
+  }
+
+  targets.forEach(function(target) {
+    target.el.setAttribute('role', 'button');
+    target.el.setAttribute('tabindex', '0');
+    target.el.setAttribute('aria-label', (target.img.alt || '施工写真') + 'を拡大表示');
+    target.el.addEventListener('click', function(e) {
+      if (e.target.closest && e.target.closest('a, button')) return;
+      openPhoto(target);
+    });
+    target.el.addEventListener('keydown', function(e) {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        openPhoto(target);
+      }
     });
   });
-  function close() { ov.classList.remove('open'); }
-  ov.addEventListener('click', close);
-  document.addEventListener('keydown', function(e) { if (e.key === 'Escape') close(); });
+
+  function closePhoto() {
+    if (!ov.classList.contains('open')) return;
+    ov.classList.remove('open');
+    ov.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+    lbImg.removeAttribute('src');
+    if (previousFocus) previousFocus.focus();
+  }
+  closeBtn.addEventListener('click', closePhoto);
+  ov.addEventListener('click', function(e) { if (e.target === ov) closePhoto(); });
+  document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closePhoto(); });
 })();
 </script>
 </body>
